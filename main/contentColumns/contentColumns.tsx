@@ -6,7 +6,7 @@ import { Button } from '../shared'
 
 import styles from './contentColumns.module.scss'
 
-export const ContentColumns = ({ block }) => {
+export const ContentColumns = ({ block, images }) => {
   return (
     <section className={styles.section}>
       {block.title && <h2 className={styles.title}>{block.title}</h2>}
@@ -20,7 +20,7 @@ export const ContentColumns = ({ block }) => {
                     <div className={styles.richText} dangerouslySetInnerHTML={{ __html: block.content }} />
                   )}
                   {block.template === 'image' && block.image && (
-                    <Image className={styles.image} src={block.image} alt={block.alt} title={block.title} />
+                    <Image className={styles.image} src={block.image} alt={block.alt} title={block.title} images={images} />
                   )}
                   {block.template === 'video' && block.videoUrl && (
                     <>

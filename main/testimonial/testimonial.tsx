@@ -4,7 +4,7 @@ import { classNames, enabled, Image } from '../../utilities'
 
 import styles from './testimonial.module.scss'
 
-export const Testimonial = ({ block }) => {
+export const Testimonial = ({ block, images }) => {
   return (
     <section className={classNames(block, styles, 'section')}>
       <section className={styles.left}>
@@ -15,7 +15,7 @@ export const Testimonial = ({ block }) => {
       <section className={styles.right}>
         {enabled(block.images).map((image, i) => {
           return (
-            <Image key={i} className={styles.image} src={image.image} alt={image.alt} title={image.title} />
+            <Image key={i} className={styles.image} src={image.image} alt={image.alt} title={image.title} images={images} />
           )
         })}
       </section>

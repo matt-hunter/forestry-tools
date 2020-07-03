@@ -4,7 +4,7 @@ import { enabled, Image } from '../../utilities'
 
 import styles from './hero.module.scss'
 
-export const Hero = ({ block }) => {
+export const Hero = ({ block, images }) => {
   const [slides, setSlides] = useState([])
   const [active, setActive] = useState(undefined)
   const [clicked, setClicked] = useState(false)
@@ -97,7 +97,7 @@ export const Hero = ({ block }) => {
       {slides.map((page, i) => {
         return (
           <div key={i} className={styles.pageContainer + `${i === active ? ' ' + styles.active : ''}`}>
-            <Image className={styles.page} src={page.image} container='div' />
+            <Image className={styles.page} src={page.image} container='div' images={images} />
             <Contents page={page} />
           </div>
         )

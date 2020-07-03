@@ -4,10 +4,10 @@ import { Image } from '../../utilities'
 
 import styles from './callButton.module.scss'
 
-export const CallButton = ({ block }) => {
+export const CallButton = ({ block, images }) => {
   return (
     <a className={styles.callButton} href={`tel:+${block.phoneNumber}`}>
-      <Image className={styles.icon} src={block.icon.image} alt={block.icon.alt} title={block.icon.title} />
+      <Image className={styles.icon} src={block.icon.image} alt={block.icon.alt} title={block.icon.title} images={images} />
       <div className={styles.text}>
         <span className={styles.label}>
           {block.text}
