@@ -1,8 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
-
-import { Context } from '../context'
 
 type imageProps = {
   className: string,
@@ -11,11 +9,11 @@ type imageProps = {
   alt?: string,
   title?: string,
   style?: any,
-  children?: React.ReactNode
+  children?: React.ReactNode,
+  images: any
 }
 
-export default ({ className, container, src, alt = '', title = '', style, children }: imageProps) => {
-  const { images } = useContext(Context)
+export default ({ className, container, src, alt = '', title = '', style, children, images }: imageProps) => {
   const image = images.find(image => image.relativePath === 'images/' + src.split('/').pop())
 
   return !container ? (
