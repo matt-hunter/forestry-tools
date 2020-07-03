@@ -5,4 +5,6 @@ import { ImageBar } from './imageBar/imageBar'
 import { ContentTabs } from './contentTabs/contentTabs'
 import { Testimonial } from './testimonial/testimonial'
 
+export { ContactForm, ContentColumns, ContentTabs, Hero, ImageBar, Testimonial }
+
 export default { ContactForm, ContentColumns, ContentTabs, Hero, ImageBar, Testimonial }

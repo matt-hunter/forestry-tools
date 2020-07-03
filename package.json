@@ -1,6 +1,6 @@
 {
   "name": "forestry-blocks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Blocks to use as part of Gatsby projects using Forestry.io as the CMS.",
   "main": "index.ts",
   "author": "Matt Hunter",

@@ -6,4 +6,6 @@ import { Logo } from './logo/logo'
 import { Navigation } from './navigation/navigation'
 import { Search } from './search/search'
 
+export { CallButton, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search }
+
 export default { CallButton, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search }
