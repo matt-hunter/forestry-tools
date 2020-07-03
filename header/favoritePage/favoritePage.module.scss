@@ -1,0 +1,13 @@
+.link {
+  display: grid;
+  align-items: center;
+  > * {
+    grid-row: 1;
+  }
+  .icon {
+    width: 1.2vw;
+    margin: 0;
+    padding: 0;
+    margin-right: .8vw;
+  }
+}

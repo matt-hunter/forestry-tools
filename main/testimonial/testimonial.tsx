@@ -1,0 +1,24 @@
+import React from 'react'
+
+import { classNames, enabled, Image } from '../../utilities'
+
+import styles from './testimonial.module.scss'
+
+export const Testimonial = ({ block }) => {
+  return (
+    <section className={classNames(block, styles, 'section')}>
+      <section className={styles.left}>
+        {block.quote && <p className={styles.quote}>{block.quote}</p>}
+        {block.author && <p className={styles.author}>{block.author}</p>}
+        {block.buttonLabel && <button className={styles.button}>{block.buttonLabel}</button>}
+      </section>
+      <section className={styles.right}>
+        {enabled(block.images).map((image, i) => {
+          return (
+            <Image key={i} className={styles.image} src={image.image} alt={image.alt} title={image.title} />
+          )
+        })}
+      </section>
+    </section>
+  )
+}

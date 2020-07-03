@@ -1,0 +1,21 @@
+.call-button {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  .icon {
+    grid-row: 1;
+    width: 1.2vw;
+    margin: 0;
+    padding: 0;
+    margin-right: .8vw;
+  }
+  .text {
+    grid-row: 1;
+    .label {
+      font-size: 1.1vw;
+    }
+    .phone-number  {
+      font-weight: 700;
+    }
+  }
+}

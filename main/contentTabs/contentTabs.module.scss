@@ -1,0 +1,42 @@
+.fill-button {
+  color: blue;
+}
+
+.fill-icon {
+  color: red;
+}
+
+.section {
+  .title {
+    color: inherit;
+  }
+  .label {
+    color: inherit;
+  }
+  .tab-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    .tab {
+      .content {
+        .rich-text {
+          color: inherit;
+        }
+        .image {
+          width: 25vw;
+        }
+        .video-container {
+          .video {
+            color: inherit;
+          }
+          .label {
+            color: inherit;
+          }
+        }
+        .buttonContainer {
+          color: inherit;
+        }
+      }
+    }
+  }
+}

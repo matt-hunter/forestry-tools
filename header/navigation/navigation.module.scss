@@ -1,0 +1,47 @@
+.navigation {
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 2vw;
+  align-items: center;
+  .link{
+    position: relative;
+    display: grid;
+    .title {
+      color: inherit;
+    }
+    .bullet {
+      display: none;
+    }
+    &:hover {
+    color: var(--secondary-hover-color);
+    }
+    &.active {
+      &:hover {
+        cursor: default;
+      }
+      .bullet {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 3vw;
+        padding: 0;
+        margin: 0;
+        line-height: 2.3vw;
+        color: var(--primary-color);
+        top: 1vw;
+        left: 0;
+        user-select: none;
+      }
+    }
+  }
+  .list {
+    display: grid;
+    grid-gap: 1vw;
+    align-items: center;
+  }
+  .item {
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+}
