@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { enabled, Image } from '../utilities'
 
-export const Hero = ({ block, styles, images }) => {
+export const Hero = ({ block, styles }) => {
   const [slides, setSlides] = useState([])
   const [active, setActive] = useState(undefined)
   const [clicked, setClicked] = useState(false)
@@ -95,7 +95,7 @@ export const Hero = ({ block, styles, images }) => {
       {slides.map((page, i) => {
         return (
           <div key={i} className={styles.pageContainer + `${i === active ? ' ' + styles.active : ''}`}>
-            <Image className={styles.page} src={page.image} container='div' images={images} />
+            <Image className={styles.page} src={page.image} container='div' />
             <Contents page={page} />
           </div>
         )
