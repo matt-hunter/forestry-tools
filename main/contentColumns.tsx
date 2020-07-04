@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 
-import { enabled, Image } from '../utilities'
+import { enabled, Image } from '../exports'
 import { Button } from './shared'
 
 export const ContentColumns = ({ block, styles, images }) => {

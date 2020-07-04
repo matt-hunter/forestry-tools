@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { classNames } from '../utilities'
+import { classNames } from '../exports'
 
 export const ContactForm = ({ block, styles }) => {
   return (

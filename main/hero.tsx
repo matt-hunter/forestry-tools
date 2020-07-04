@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { enabled, Image } from '../utilities'
+import { enabled, Image } from '../exports'
 
 export const Hero = ({ block, styles, images }) => {
   const [slides, setSlides] = useState([])

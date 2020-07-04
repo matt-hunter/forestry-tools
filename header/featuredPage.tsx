@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { getPage } from '../utilities'
+import { getPage } from '../exports'
 
 export const FeaturedPage = ({ block, styles, pages }) => {
   return (

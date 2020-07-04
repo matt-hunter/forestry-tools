@@ -1,2 +1,2 @@
-# Forestry Blocks
-First attempt at creating an npm package.
+# Forestry Tools
+Package to remove Forestry project complexity and centralize code for projects

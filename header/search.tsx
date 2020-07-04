@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Image } from '../utilities'
+import { Image } from '../exports'
 
 export const Search = ({ block, styles, images }) => (
   <div className={styles.search}>

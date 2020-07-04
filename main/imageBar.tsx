@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { classNames, enabled, Image } from '../utilities'
+import { classNames, enabled, Image } from '../exports'
 
 export const ImageBar = ({ block, styles, images }) => {
   console.log(block)

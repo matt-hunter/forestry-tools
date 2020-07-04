@@ -1,6 +1,3 @@
-import Header from './header'
-import Main from './main'
+import { classNames, enabled, getPage, headerBlock, Image, link, mainBlock } from './exports'
 
-console.log(Header, Main)
-
-export { Header, Main }
+export { classNames, enabled, getPage, headerBlock, Image, link, mainBlock }

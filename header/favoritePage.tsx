@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { getPage, Image } from '../utilities'
+import { getPage, Image } from '../exports'
 
 export const FavoritePage = ({ block, styles, pages, images }) => {
   return (

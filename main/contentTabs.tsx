@@ -2,7 +2,7 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import camelcase from 'camelcase'
 
-import { classNames, enabled, Image } from '../utilities'
+import { classNames, enabled, Image } from '../exports'
 
 export const ContentTabs = ({ block, styles, images }) => {
   return (
