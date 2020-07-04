@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import React from 'react'
 import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 
@@ -10,52 +9,12 @@ type imageProps = {
   alt?: string,
   title?: string,
   style?: any,
-  children?: React.ReactNode
+  children?: React.ReactNode,
+  images: any
 }
 
-type dataObject = {
-  allFile: {
-    nodes: {
-      publicURL: string,
-      relativePath: string,
-      childImageSharpFluid: {
-        fluid: any
-      }
-    }
-  }
-}
-
-export default ({ className, container, src, alt = '', title = '', style, children }: imageProps) => {
-  const [data] = useState<dataObject>(useStaticQuery(graphql`
-  {
-    allFile(filter: {relativeDirectory: {eq: "images"}}) {
-      nodes {
-        publicURL
-        relativePath
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  }
-`))
-
-  const [images, setImages] = useState<any>([])
-  const [image, setImage] = useState<any>(undefined)
-
-  useEffect(() => {
-    if (data) {
-      setImages(data.allFile.nodes)
-    }
-  }, [data])
-
-  useEffect(() => {
-    if (images) {
-      setImage(images.find(image => image.relativePath === 'images/' + src.split('/').pop()))
-    }
-  })
+export default ({ className, container, src, alt = '', title = '', style, children, images }: imageProps) => {
+  const image = images.find(image => image.relativePath === 'images/' + src.split('/').pop())
 
   return !container ? (
     image && image.childImageSharp && image.childImageSharp.fluid ? (

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { classNames, enabled, Image } from '../utilities'
 
-export const Testimonial = ({ block, styles }) => {
+export const Testimonial = ({ block, styles, images }) => {
   return (
     <section className={classNames(block, styles, 'section')}>
       <section className={styles.left}>
@@ -13,7 +13,7 @@ export const Testimonial = ({ block, styles }) => {
       <section className={styles.right}>
         {enabled(block.images).map((image, i) => {
           return (
-            <Image key={i} className={styles.image} src={image.image} alt={image.alt} title={image.title} />
+            <Image key={i} className={styles.image} src={image.image} alt={image.alt} title={image.title} images={images} />
           )
         })}
       </section>

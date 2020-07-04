@@ -4,7 +4,7 @@ import camelcase from 'camelcase'
 
 import { classNames, enabled, Image } from '../utilities'
 
-export const ContentTabs = ({ block, styles }) => {
+export const ContentTabs = ({ block, styles, images }) => {
   return (
     <section className={classNames(block, styles, 'section')}>
       {block.title && <h1 className={styles.title}>{block.title}</h1>}
@@ -19,7 +19,7 @@ export const ContentTabs = ({ block, styles }) => {
                     block.content && <div className={classNames(block, styles, 'richText')} dangerouslySetInnerHTML={{ __html: block.content }} />
                   )}
                   {block.template === 'image' && (
-                    block.image && <Image className={classNames(block, styles, 'image')} src={block.image} alt={block.alt} title={block.title} />
+                    block.image && <Image className={classNames(block, styles, 'image')} src={block.image} alt={block.alt} title={block.title} images={images} />
                   )}
                   {block.template === 'video' && block.videoUrl && (
                     <div className={classNames(block, styles, 'video')}>

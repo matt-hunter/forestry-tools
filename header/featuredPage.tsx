@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { Page } from '../utilities'
+import { getPage } from '../utilities'
 
-export const FeaturedPage = ({ block, styles }) => {
+export const FeaturedPage = ({ block, styles, pages }) => {
   return (
     <Link className={styles.featured} to={block.page.replace('.forestry/content/pages', '').replace('.json', '')}>
-      <Page target={block.page} />
+      {getPage(block.page, pages) && getPage(block.page, pages).title}
     </Link>
   )
 }

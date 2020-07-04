@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Image } from '../utilities'
 
-export const CallButton = ({ block, styles }) => {
+export const CallButton = ({ block, styles, images }) => {
   return (
     <a className={styles.callButton} href={`tel:+${block.phoneNumber}`}>
-      <Image className={styles.icon} src={block.icon.image} alt={block.icon.alt} title={block.icon.title} />
+      <Image className={styles.icon} src={block.icon.image} alt={block.icon.alt} title={block.icon.title} images={images} />
       <div className={styles.text}>
         <span className={styles.label}>
           {block.text}
