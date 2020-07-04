@@ -1,7 +1,7 @@
 {
-  "name": "forestry-blocks",
-  "version": "0.0.2",
-  "description": "Blocks to use as part of Gatsby projects using Forestry.io as the CMS.",
+  "name": "forestry-tools",
+  "version": "0.0.1",
+  "description": "Package to remove Forestry project complexity and centralize code for projects.",
   "main": "index.ts",
   "author": "Matt Hunter",
   "license": "MIT",
@@ -20,6 +20,10 @@
     "react": "^16.13.1",
     "react-player": "^2.4.0",
     "typescript": "^3.9.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matt-hunter/forestry-tools"
   },
   "eslintConfig": {
     "rules": {
