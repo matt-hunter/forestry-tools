@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { ContactForm, ContentColumns, ContentTabs, Hero, ImageBar, Testimonial } from '../main'
 
 export default (block, i, images, styles) => [{
