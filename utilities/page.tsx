@@ -15,7 +15,7 @@ type dataObject = {
   }
 }
 
-export default ({ target }) => {
+export default target => {
   const [data] = useState<dataObject>(useStaticQuery(graphql`
   {
     allPagesJson {
@@ -39,11 +39,11 @@ export default ({ target }) => {
         slug: page.title === 'Home' ? '/' : slugify(page.title).toLowerCase()
       })))
     }
-  }, [])
+  }, [data])
 
   useEffect(() => {
     if (pages.length) setPage(pages.find(page => page.slug === target.replace('.forestry/content/pages/', '').replace('.json', '')))
-  }, [pages])
+  }, pages)
 
   return page && page.title ? (
     <p>{page}</p>
