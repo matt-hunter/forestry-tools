@@ -49,13 +49,13 @@ export default ({ className, container, src, alt = '', title = '', style, childr
     if (data) {
       setImages(data.allFile.nodes)
     }
-  }, [data])
+  }, [])
 
   useEffect(() => {
     if (images) {
       setImage(images.find(image => image.relativePath === 'images/' + src.split('/').pop()))
     }
-  })
+  }, [images])
 
   return !container ? (
     image && image.childImageSharp && image.childImageSharp.fluid ? (
