@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { link } from '../../utilities'
 
-import styles from './navigation.module.scss'
+import { link } from '../utilities'
 
-export const Navigation = ({ block, pages }) => {
+export const Navigation = ({ block, styles, pages }) => {
   const getPage = target => pages.find(page => page.slug === target.replace('.forestry/content/pages/', '').replace('.json', ''))
 
   return (

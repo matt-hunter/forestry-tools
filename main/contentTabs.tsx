@@ -2,11 +2,9 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import camelcase from 'camelcase'
 
-import { classNames, enabled, Image } from '../../utilities'
+import { classNames, enabled, Image } from '../utilities'
 
-import styles from './contentTabs.module.scss'
-
-export const ContentTabs = ({ block, images }) => {
+export const ContentTabs = ({ block, styles, images }) => {
   return (
     <section className={classNames(block, styles, 'section')}>
       {block.title && <h1 className={styles.title}>{block.title}</h1>}

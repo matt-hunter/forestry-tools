@@ -1,12 +1,10 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 
-import { enabled, Image } from '../../utilities'
-import { Button } from '../shared'
+import { enabled, Image } from '../utilities'
+import { Button } from './shared'
 
-import styles from './contentColumns.module.scss'
-
-export const ContentColumns = ({ block, images }) => {
+export const ContentColumns = ({ block, styles, images }) => {
   return (
     <section className={styles.section}>
       {block.title && <h2 className={styles.title}>{block.title}</h2>}
@@ -31,7 +29,7 @@ export const ContentColumns = ({ block, images }) => {
                     </>
                   )}
                   {block.template === 'button' && (
-                    <Button style={block.style} text={block.buttonText} />
+                    <Button styles={styles} style={block.style} text={block.buttonText} />
                   )}
                 </React.Fragment>
               ))}

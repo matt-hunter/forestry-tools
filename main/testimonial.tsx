@@ -1,10 +1,8 @@
 import React from 'react'
 
-import { classNames, enabled, Image } from '../../utilities'
+import { classNames, enabled, Image } from '../utilities'
 
-import styles from './testimonial.module.scss'
-
-export const Testimonial = ({ block, images }) => {
+export const Testimonial = ({ block, styles, images }) => {
   return (
     <section className={classNames(block, styles, 'section')}>
       <section className={styles.left}>

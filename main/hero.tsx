@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import { enabled, Image } from '../../utilities'
+import { enabled, Image } from '../utilities'
 
-import styles from './hero.module.scss'
-
-export const Hero = ({ block, images }) => {
+export const Hero = ({ block, styles, images }) => {
   const [slides, setSlides] = useState([])
   const [active, setActive] = useState(undefined)
   const [clicked, setClicked] = useState(false)

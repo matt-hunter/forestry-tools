@@ -1,10 +1,8 @@
 import React from 'react'
 
-import { classNames } from '../../utilities'
+import { classNames } from '../utilities'
 
-import styles from './contactForm.module.scss'
-
-export const ContactForm = ({ block }) => {
+export const ContactForm = ({ block, styles }) => {
   return (
     <section className={classNames(block, styles, 'section')}>
       <div className={styles.contactForm}>
