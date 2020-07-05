@@ -22,10 +22,12 @@ export const ContentTabs = ({ block, styles, images }) => {
                     block.image && <Image className={classNames(block, styles, 'image')} src={block.image} alt={block.alt} title={block.title} images={images} />
                   )}
                   {block.template === 'video' && block.videoUrl && (
-                    <div className={classNames(block, styles, 'video')}>
-                      <ReactPlayer className={styles.video} light url={block.videoUrl} />
-                      <p className={styles.label}>{block.label}</p>
-                    </div>
+                    <>
+                      <div className={styles.videoContainer}>
+                        <ReactPlayer className={styles.video} light url={block.videoUrl} width='100%' height='100%' />
+                      </div>
+                      <p className={styles.videoLabel}>{block.label}</p>
+                    </>
                   )}
                   {block.template === 'button' && (
                     <div className={styles.buttonContainer}>
