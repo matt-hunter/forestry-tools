@@ -17,5 +17,9 @@ export default (block, i, images, styles, pages) => {
     <CallButton key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'header-search' ? (
     <Search key={i} block={block} styles={styles} images={images} />
+  ) : block.template === 'header-contact-form-with-video-background' ? (
+    <Search key={i} block={block} styles={styles} images={images} />
+  ) : block.template === 'header-contact-info' ? (
+    <Search key={i} block={block} styles={styles} images={images} />
   ) : <p key={i}>{block.template} not defined</p>
 }
