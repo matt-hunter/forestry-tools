@@ -1,3 +1,3 @@
-import { classNames, enabled, getPage, headerBlock, Image, link, mainBlock } from './exports'
+import { classNames, enabled, footerBlock, getPage, headerBlock, Image, link, mainBlock } from './exports'
 
-export { classNames, enabled, getPage, headerBlock, Image, link, mainBlock }
+export { classNames, enabled, footerBlock, getPage, headerBlock, Image, link, mainBlock }
