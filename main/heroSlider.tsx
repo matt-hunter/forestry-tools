@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { enabled, Image } from '../exports'
 
-export const Hero = ({ block, styles, images }) => {
+export const HeroSlider = ({ block, styles, images }) => {
   const [slides, setSlides] = useState([])
   const [active, setActive] = useState(undefined)
   const [clicked, setClicked] = useState(false)

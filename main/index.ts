@@ -1,10 +1,10 @@
 import { ContactForm } from './contactForm'
 import { ContentColumns } from './contentColumns'
-import { Hero } from './hero'
+import { HeroSlider } from './heroSlider'
 import { ImageBar } from './imageBar'
 import { ContentTabs } from './contentTabs'
 import { Testimonial } from './testimonial'
 
-export { ContactForm, ContentColumns, ContentTabs, Hero, ImageBar, Testimonial }
+export { ContactForm, ContentColumns, ContentTabs, HeroSlider, ImageBar, Testimonial }
 
-export default { ContactForm, ContentColumns, ContentTabs, Hero, ImageBar, Testimonial }
+export default { ContactForm, ContentColumns, ContentTabs, HeroSlider, ImageBar, Testimonial }

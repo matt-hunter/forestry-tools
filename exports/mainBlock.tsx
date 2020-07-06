@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ContactForm, ContentColumns, ContentTabs, Hero, ImageBar, Testimonial } from '../main'
+import { ContactForm, ContentColumns, ContentTabs, HeroSlider, ImageBar, Testimonial } from '../main'
 
 export default (block, i, images, styles) => {
   return block.template === 'main-contact-form' ? (
@@ -13,8 +13,8 @@ export default (block, i, images, styles) => {
     <ContentTabs key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'main-gallery' ? (
     <p key={i}>{block.template}</p>
-  ) : block.template === 'main-hero' ? (
-    <Hero key={i} block={block} styles={styles} images={images} />
+  ) : block.template === 'main-hero-slider' ? (
+    <HeroSlider key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'main-image-bar' ? (
     <ImageBar key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'main-images' ? (
