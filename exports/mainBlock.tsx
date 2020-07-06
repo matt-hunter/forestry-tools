@@ -25,11 +25,11 @@ export default (block, i, images, styles) => {
     <p key={i}>{block.template}</p>
   ) : block.template === 'main-posts' ? (
     <p key={i}>{block.template}</p>
-  ) : block.template === 'main-recent-research' ? (
+  ) : block.template === 'main-recent-articles' ? (
     <p key={i}>{block.template}</p>
-  ) : block.template === 'main-research-grid' ? (
+  ) : block.template === 'main-articles-grid' ? (
     <p key={i}>{block.template}</p>
-  ) : block.template === 'main-research-slider' ? (
+  ) : block.template === 'main-articles-slider' ? (
     <p key={i}>{block.template}</p>
   ) : block.template === 'main-slideshow' ? (
     <p key={i}>{block.template}</p>
