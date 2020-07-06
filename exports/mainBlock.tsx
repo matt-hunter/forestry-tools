@@ -35,5 +35,5 @@ export default (block, i, images, styles) => {
     <p key={i}>{block.template}</p>
   ) : block.template === 'main-testimonial' ? (
     <Testimonial key={i} block={block} styles={styles} images={images} />
-  ) : null
+  ) : <p key={i}>{block.template} not defined</p>
 }
