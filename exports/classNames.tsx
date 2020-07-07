@@ -1,6 +1,8 @@
-export default (element, styles, defaultClassName) => {
-  if (element && element.settings && element.settings.customClasses) {
-    return [defaultClassName, ...element.settings.customClasses].map(name => styles[name]).join(' ').trim()
+import camelcase from 'camelcase'
+
+export default (element, styles) => {
+  if (element && element.settings && element.settings.class) {
+    return ['default', element.settings.class].map(name => styles[camelcase(name)]).join(' ').trim()
   }
-  return styles[defaultClassName]
+  return styles.default
 }

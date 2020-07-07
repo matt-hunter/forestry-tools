@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 
-import { enabled, Image } from '../exports'
+import { classNames, enabled, Image } from '../exports'
 import { Button } from '../shared'
 
 export const ContentColumns = ({ block, styles, images }) => {
   return (
-    <section className={styles.section}>
+    <section className={classNames(block, styles)}>
       {block.title && <h2 className={styles.title}>{block.title}</h2>}
       <div className={styles.columns}>
         {enabled(block.columns).map((column, i) => (

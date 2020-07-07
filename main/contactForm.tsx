@@ -4,7 +4,7 @@ import { classNames } from '../exports'
 
 export const ContactForm = ({ block, styles }) => {
   return (
-    <section className={classNames(block, styles, 'section')}>
+    <section className={classNames(block, styles)}>
       <div className={styles.contactForm}>
         {block.title && <h2 className={styles.title}>{block.title}</h2>}
         {block.subtitle && <h3 className={styles.subtitle}>{block.subtitle}</h3>}

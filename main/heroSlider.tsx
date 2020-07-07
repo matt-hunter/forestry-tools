@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { enabled, Image } from '../exports'
+import { classNames, enabled, Image } from '../exports'
 
 export const HeroSlider = ({ block, styles, images }) => {
   const [slides, setSlides] = useState([])
@@ -91,7 +91,7 @@ export const HeroSlider = ({ block, styles, images }) => {
   // const chevronDown = assets.find(asset => asset.name === 'Chevron Down').asset.publicURL
 
   return (
-    <section className={styles.section}>
+    <section className={classNames(slides, styles)}>
       {slides.map((page, i) => {
         return (
           <div key={i} className={styles.pageContainer + `${i === active ? ' ' + styles.active : ''}`}>

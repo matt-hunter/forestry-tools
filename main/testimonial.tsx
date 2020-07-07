@@ -4,7 +4,7 @@ import { classNames, enabled, Image } from '../exports'
 
 export const Testimonial = ({ block, styles, images }) => {
   return (
-    <section className={classNames(block, styles, 'section')}>
+    <section className={classNames(block, styles)}>
       <section className={styles.left}>
         {block.quote && <p className={styles.quote}>{block.quote}</p>}
         {block.author && <p className={styles.author}>{block.author}</p>}

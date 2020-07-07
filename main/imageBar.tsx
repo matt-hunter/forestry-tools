@@ -3,7 +3,7 @@ import React from 'react'
 import { classNames, enabled, Image } from '../exports'
 
 export const ImageBar = ({ block, styles, images }) => (
-  <section className={classNames(block, styles, 'section')}>
+  <section className={classNames(block, styles)}>
     {enabled(block.images).map((item, i) => {
       return item.url ? (
         <a className={styles.link} key={i} href={item.url}>

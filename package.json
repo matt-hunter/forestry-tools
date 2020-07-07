@@ -1,7 +1,7 @@
 {
-  "name": "forestry-tools",
+  "name": "s8-forestry-tools",
   "version": "0.0.1",
-  "description": "Package to remove Forestry project complexity and centralize code for projects.",
+  "description": "Package to remove Forestry project complexity and centralize code for projects for Station8. This is probably not of any use to anyone else.",
   "main": "index.ts",
   "author": "Matt Hunter",
   "license": "MIT",
