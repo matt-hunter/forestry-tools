@@ -8,7 +8,9 @@ export const ContactInfo = ({ styles, contactInfo }) => {
           {`+1.${contactInfo.phoneNumber.substr(0, 3)}.${contactInfo.phoneNumber.substr(3, 3)}.${contactInfo.phoneNumber.substr(6, 4)}`}
         </p>
       )}
-      <button>Get in touch</button>
+      <div className={styles.buttonContainer}>
+        <button className={styles.button}>Get in touch</button>
+      </div>
       {contactInfo.email && (
         <a className={styles.email} href={'mailto:' + contactInfo.email}>{contactInfo.email}</a>
       )}
