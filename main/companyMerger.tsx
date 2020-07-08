@@ -12,11 +12,13 @@ export const CompanyMerger = ({ block, styles, images }) => {
       <div className={styles.companies}>
         {enabled(block.companies).map((company, i) => {
           return (
-            <div className={styles.company} key={i}>
-              {i > 0 && <p>+</p>}
-              <Image className={styles.image} images={images} src={company.logo.image} title={company.logo.title} alt={company.logo.alt} />
-              {company.description && <p className={styles.description}>{company.description}</p>}
-            </div>
+            <React.Fragment key={i}>
+              {i > 0 && <p className={styles.plusSymbol}>+</p>}
+              <div className={styles.company}>
+                <Image className={styles.image} images={images} src={company.logo.image} title={company.logo.title} alt={company.logo.alt} />
+                {company.description && <p className={styles.description}>{company.description}</p>}
+              </div>
+            </React.Fragment>
           )
         })}
       </div>
