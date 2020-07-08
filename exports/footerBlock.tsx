@@ -1,13 +1,14 @@
 import React from 'react'
 
-import { ContactInfo } from '../footer'
+import { ContactInfo, CopyrightInfo, Logo } from '../footer'
 
 export default (block, i, images, styles, pages, contactInfo) => {
+  (block.template === 'footer-copyright-info' || block.template === 'footer-logo') && console.log(block)
   return block.template === 'footer-contact-info' ? (
     <ContactInfo key={i} styles={styles} contactInfo={contactInfo} />
   ) : block.template === 'footer-copyright-info' ? (
-    <p key={i}>{block.template}</p>
+    <CopyrightInfo key={i} block={block} pages={pages} />
   ) : block.template === 'footer-logo' ? (
-    <p key={i}>{block.template}</p>
+    <Logo key={i} block={block} images={images} />
   ) : <p key={i}>{block.template} not defined</p>
 }
