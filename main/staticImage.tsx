@@ -1,14 +1,18 @@
 import React from 'react'
 
-import { classNames } from '../exports'
+import { classNames, Image } from '../exports'
 
-export const StaticImage = ({ block, styles }) => {
-  const blockValues = Object.entries(block).filter(([name, value]) => value !== null)
-    .map(([name, value]) => ({ name, value }))
-  console.log(block.template, blockValues)
+export const StaticImage = ({ block, styles, images }) => {
   return (
     <section className={classNames(block, styles)}>
-      <p>{block.template}</p>
+      <Image images={images} className={styles.image} container='div' src={block.image.image} title={block.image.title} alt={block.image.alt}>
+        <p className={styles.text}>{block.text}</p>
+        <div className={styles.buttonContainer}>
+          <button className={styles.button}>
+            Find out more
+          </button>
+        </div>
+      </Image>
     </section>
   )
 }
