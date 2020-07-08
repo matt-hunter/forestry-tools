@@ -7,8 +7,8 @@ export default (block, i, images, styles, pages, contactInfo) => {
   return block.template === 'footer-contact-info' ? (
     <ContactInfo key={i} styles={styles} contactInfo={contactInfo} />
   ) : block.template === 'footer-copyright-info' ? (
-    <CopyrightInfo key={i} block={block} pages={pages} />
+    <CopyrightInfo key={i} styles={styles} block={block} pages={pages} />
   ) : block.template === 'footer-logo' ? (
-    <Logo key={i} block={block} images={images} />
+    <Logo key={i} styles={styles} block={block} images={images} />
   ) : <p key={i}>{block.template} not defined</p>
 }

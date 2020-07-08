@@ -1,5 +1,9 @@
 import React from 'react'
 
-export const Logo = ({ block, images }) => {
-  return <p>{block.template}</p>
+export const Logo = ({ block, styles, images }) => {
+  return (
+    <section className={styles.default}>
+      <p>{block.template}</p>
+    </section>
+  )
 }
