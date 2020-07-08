@@ -9,12 +9,12 @@ export const CompanyMerger = ({ block, styles, images }) => {
         {block.heading && <h1 className={styles.heading}>{block.heading}</h1>}
         {block.body && <p className={styles.body}>{block.body}</p>}
       </div>
-      {enabled(block.cities).map((city, i) => {
+      {enabled(block.companies).map((company, i) => {
         return (
-          <div className={styles.city} key={i}>
+          <div className={styles.company} key={i}>
             {i > 0 && <p>+</p>}
-            <Image className={styles.image} images={images} src={city.logo.image} title={city.logo.title} alt={city.logo.alt} />
-            {city.description && <p className={styles.description}>{city.description}</p>}
+            <Image className={styles.image} images={images} src={company.logo.image} title={company.logo.title} alt={company.logo.alt} />
+            {company.description && <p className={styles.description}>{company.description}</p>}
           </div>
         )
       })}
