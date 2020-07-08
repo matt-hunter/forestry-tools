@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player'
 
 export const ContactFormWithVideoBackground = ({ block, images, styles }) => {
   return (
-    <div className={styles.default}>
+    <section className={styles.default}>
       <div className={styles.videoContainer}>
         <ReactPlayer playing muted loop className={styles.video} url={block.video} width='100%' height='100%' />
       </div>
@@ -27,6 +27,6 @@ export const ContactFormWithVideoBackground = ({ block, images, styles }) => {
         </fieldset>
         <button className={styles.submit}>Send</button>
       </form>
-    </div>
+    </section>
   )
 }
