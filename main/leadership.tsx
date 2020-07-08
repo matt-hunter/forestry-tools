@@ -13,7 +13,7 @@ export const Leadership = ({ block, styles, images }) => {
             setIndex(i)
           }
           return (
-            <div key={i} className={styles.leader} onClick={setActiveIndex}>
+            <div key={i} className={styles.leader + `${index === i ? ` ${styles.active}` : ''}`} onClick={setActiveIndex}>
               <Image className={styles.image} images={images} container='div' src={leader.photo.image} alt={leader.photo.alt} title={leader.photo.title}>
                 <p className={styles.name}>{leader.name}</p>
                 <p className={styles.title}>{leader.title}</p>
