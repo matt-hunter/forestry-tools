@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (block, i, images, styles, pages) => {
+export default (block, i, images, styles, pages, contactInfo) => {
   return block.template === 'footer-contact-info' ? (
     <p key={i}>{block.template}</p>
   ) : block.template === 'footer-copyright-info' ? (

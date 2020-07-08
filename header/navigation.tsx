@@ -7,7 +7,7 @@ export const Navigation = ({ block, styles, pages }) => {
   const getPage = target => pages.find(page => page.slug === target.replace('.forestry/content/pages/', '').replace('.json', ''))
 
   return (
-    <nav className={styles.navigation} role='navigation' aria-label='main navigation'>
+    <nav className={styles.default} role='navigation' aria-label='main navigation'>
       <ul className={styles.item + ' ' + styles.list}>
         {block.navigationItems.map((item, i) => {
           return getPage(item) && getPage(item).title && (

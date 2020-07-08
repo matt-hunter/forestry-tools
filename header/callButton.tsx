@@ -4,7 +4,7 @@ import { Image } from '../exports'
 
 export const CallButton = ({ block, styles, images }) => {
   return (
-    <a className={styles.callButton} href={`tel:+${block.phoneNumber}`}>
+    <a className={styles.default} href={`tel:+${block.phoneNumber}`}>
       <Image className={styles.icon} src={block.icon.image} alt={block.icon.alt} title={block.icon.title} images={images} />
       <div className={styles.text}>
         <span className={styles.label}>
