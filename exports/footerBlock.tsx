@@ -3,7 +3,6 @@ import React from 'react'
 import { ContactInfo, CopyrightInfo, Logo } from '../footer'
 
 export default (block, i, images, styles, pages, contactInfo) => {
-  (block.template === 'footer-copyright-info' || block.template === 'footer-logo') && console.log(block)
   return block.template === 'footer-contact-info' ? (
     <ContactInfo key={i} styles={styles} contactInfo={contactInfo} />
   ) : block.template === 'footer-copyright-info' ? (
