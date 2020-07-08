@@ -15,9 +15,10 @@ export const Cities = ({ block, styles, images }) => {
       {enabled(block.cities).map((city, i) => {
         return (
           <div key={i} className={styles.city}>
-            <Image className={styles.image} src={city.image.image} images={images} title={city.image.title} alt={city.image.alt} />
-            <p className={styles.name}>{city.name}</p>
-            <p className={styles.nativeLanguageName}>{city.nativeLanguageName}</p>
+            <Image className={styles.image} src={city.image.image} images={images} title={city.image.title} alt={city.image.alt} container='div'>
+              <p className={styles.name}>{city.name}</p>
+              <p className={styles.nativeLanguageName}>{city.nativeLanguageName}</p>
+            </Image>
           </div>
         )
       })}

@@ -15,7 +15,7 @@ export const Highlights = ({ block, styles, images }) => {
           return (
             <div key={i} className={styles.highlight + `${index === i ? ` ${styles.active}` : ''}`} onClick={setActiveIndex}>
               <Image className={styles.image} images={images} container='div' src={highlight.image.image} title={highlight.image.title} alt={highlight.image.alt}>
-                <p className={styles.index}>{`${index < 10 ? '0' : ''}${index + 1}`}</p>
+                <p className={styles.index}>{`${i < 10 ? '0' : ''}${i + 1}`}</p>
               </Image>
             </div>
           )
@@ -23,7 +23,7 @@ export const Highlights = ({ block, styles, images }) => {
       </div>
       {block.highlights[index] && (
         <div className={styles.detail}>
-          {block.highlights[index].image && <Image className={styles.image} images={images} container='div' src={block.highlights[index].image.image} title={block.highlights[index].image.title} alt={block.highlights[index].image.alt} />}
+          {block.highlights[index].image && <Image className={styles.image} images={images} src={block.highlights[index].image.image} title={block.highlights[index].image.title} alt={block.highlights[index].image.alt} />}
           {block.highlights[index].title && <h2 className={styles.title}>{block.highlights[index].title}</h2>}
           {block.highlights[index].body && <p className={styles.body}>{block.highlights[index].body}</p>}
           <div className={styles.buttonContainer}>
