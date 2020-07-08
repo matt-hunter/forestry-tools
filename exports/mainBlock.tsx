@@ -35,6 +35,20 @@ export default (block, i, images, styles) => {
     <p key={i}>{block.template}</p>
   ) : block.template === 'main-slideshow' ? (
     <p key={i}>{block.template}</p>
+  ) : block.template === 'main-cities' ? (
+    <p key={i}>{block.template}</p>
+  ) : block.template === 'main-company-merger' ? (
+    <p key={i}>{block.template}</p>
+  ) : block.template === 'main-leadership' ? (
+    <p key={i}>{block.template}</p>
+  ) : block.template === 'main-highlights' ? (
+    <p key={i}>{block.template}</p>
+  ) : block.template === 'main-static-image' ? (
+    <p key={i}>{block.template}</p>
+  ) : block.template === 'main-animated-image' ? (
+    <p key={i}>{block.template}</p>
+  ) : block.template === 'main-hero' ? (
+    <p key={i}>{block.template}</p>
   ) : block.template === 'main-testimonial' ? (
     <Testimonial key={i} block={block} styles={styles} images={images} />
   ) : <p key={i}>{block.template} not defined</p>
