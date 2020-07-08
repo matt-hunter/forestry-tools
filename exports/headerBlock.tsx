@@ -3,7 +3,6 @@ import React from 'react'
 import { CallButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search } from '../header'
 
 export default (block, i, images, styles, pages, contactInfo) => {
-  block.template === 'header-contact-info' && console.log(contactInfo)
   return block.template === 'header-call-button' ? (
     <CallButton key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'header-contact-form-with-video-background' ? (
