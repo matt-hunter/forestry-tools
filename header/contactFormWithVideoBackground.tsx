@@ -7,7 +7,7 @@ export const ContactFormWithVideoBackground = ({ block, images, styles }) => {
   return (
     <div className={styles.default}>
       <div className={styles.videoContainer}>
-        <ReactPlayer playing muted className={styles.video} url={block.video} width='100%' height='100%' />
+        <ReactPlayer playing muted loop className={styles.video} url={block.video} width='100%' height='100%' />
       </div>
       <Image images={images} className={styles.image} src={block.image} />
       <form className={styles.form}>
