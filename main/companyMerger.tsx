@@ -9,15 +9,17 @@ export const CompanyMerger = ({ block, styles, images }) => {
         {block.heading && <h1 className={styles.heading}>{block.heading}</h1>}
         {block.body && <p className={styles.body}>{block.body}</p>}
       </div>
-      {enabled(block.companies).map((company, i) => {
-        return (
-          <div className={styles.company} key={i}>
-            {i > 0 && <p>+</p>}
-            <Image className={styles.image} images={images} src={company.logo.image} title={company.logo.title} alt={company.logo.alt} />
-            {company.description && <p className={styles.description}>{company.description}</p>}
-          </div>
-        )
-      })}
+      <div className={styles.companies}>
+        {enabled(block.companies).map((company, i) => {
+          return (
+            <div className={styles.company} key={i}>
+              {i > 0 && <p>+</p>}
+              <Image className={styles.image} images={images} src={company.logo.image} title={company.logo.title} alt={company.logo.alt} />
+              {company.description && <p className={styles.description}>{company.description}</p>}
+            </div>
+          )
+        })}
+      </div>
     </section>
   )
 }
