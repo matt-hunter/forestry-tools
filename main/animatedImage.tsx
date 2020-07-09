@@ -1,14 +1,26 @@
 import React from 'react'
+import camelcase from 'camelcase'
 
-import { classNames } from '../exports'
+import { classNames, enabled, Image } from '../exports'
 
-export const AnimatedImage = ({ block, styles }) => {
-  const blockValues = Object.entries(block).filter(([name, value]) => value !== null)
-    .map(([name, value]) => ({ name, value }))
-  console.log(block.template, blockValues)
+export const AnimatedImage = ({ block, styles, images }) => {
   return (
     <section className={classNames(block, styles)}>
-      <p>{block.template}</p>
+      {enabled(block.backgrounds).map((background, i) => {
+        return (
+          <Image key={i} className={styles.image} images={images} src={background.image} container='div' title={background.title} alt={background.alt}>
+            {i === block.backgrounds.length - 1 && (
+              <>
+                <div className={styles.textContainer}>
+                  <h1 className={styles.heading1}>{block.heading1}</h1>
+                  <h2 className={styles.heading2}>{block.heading2}</h2>
+                </div>
+                <div className={styles.animatedElement + ' ' + styles[camelcase(block.animatedElement)]} />
+              </>
+            )}
+          </Image>
+        )
+      })}
     </section>
   )
 }
