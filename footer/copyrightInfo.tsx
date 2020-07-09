@@ -1,12 +1,24 @@
 import React from 'react'
+import { Link } from 'gatsby'
+
+import { enabled } from '../exports'
 
 export const CopyrightInfo = ({ block, styles, pages }) => {
-  const blockValues = Object.entries(block).filter(([name, value]) => value !== null)
-    .map(([name, value]) => ({ name, value }))
-  console.log(block.template, blockValues)
+  const getPage = filePath => {
+    const page = pages.find(page => filePath.includes(page.relativePath))
+    return page && page.filePath ? (
+      <Link className={styles.link} to={page.filePath}>{page.title}</Link>
+    ) : 'Link Missing'
+  }
   return (
     <section className={styles.default}>
-      <p>{block.template}</p>
+      {enabled(block.blocks).map((block, i) => {
+        return block.template === 'copyright-info-link' ? (
+          <p key={i} className={styles.paragraph}>{getPage(block.page)}</p>
+        ) : block.template === 'copyright-info-text' ? (
+          <p key={i} className={styles.paragraph}>Text</p>
+        ) : null
+      })}
     </section>
   )
 }
