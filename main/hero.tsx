@@ -52,13 +52,15 @@ export const Hero = ({ block, styles, images }) => {
           return (
             <div key={i} className={styles.oilPrice}>
               <span className={styles.name}>{oilPrice.name}</span>
-              <img className={styles.icon} src={droplet} alt='oil' />
-              <span className={styles.change + `${oilPrice.decrease ? ` ${styles.decrease}` : ` ${styles.increase}`}`}>
-                {oilPrice.decrease ? (
-                  <img className={styles.icon} src={arrowDown} alt='down' />
-                ) : (
-                  <img className={styles.icon} src={arrowUp} alt='up' />
-                )}
+              <span className={styles.iconsContainer}>
+                <img className={styles.icon} src={droplet} alt='oil' />
+                <span className={styles.change + `${oilPrice.decrease ? ` ${styles.decrease}` : ` ${styles.increase}`}`}>
+                  {oilPrice.decrease ? (
+                    <img className={styles.icon} src={arrowDown} alt='down' />
+                  ) : (
+                    <img className={styles.icon} src={arrowUp} alt='up' />
+                  )}
+                </span>
               </span>
               <span className={styles.price}>{oilPrice.price}</span>
               <span className={styles.difference}>{oilPrice.difference}</span>
