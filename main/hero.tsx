@@ -42,12 +42,6 @@ export const Hero = ({ block, styles, images }) => {
     }
   }, [oilData])
 
-  useEffect(() => {
-    if (oilPrices.length) {
-      console.log(oilPrices)
-    }
-  }, [oilPrices])
-
   return (
     <section id='hero' className={classNames(block, styles)}>
       {enabled(block.backgrounds).map((background, i) => (
@@ -58,17 +52,17 @@ export const Hero = ({ block, styles, images }) => {
           return (
             <div key={i} className={styles.oilPrice}>
               <span className={styles.name}>{oilPrice.name}</span>
-              <img src={droplet} alt='oil' />
+              <img className={styles.icon} src={droplet} alt='oil' />
               <span className={styles.change + `${oilPrice.decrease ? ` ${styles.decrease}` : ` ${styles.increase}`}`}>
                 {oilPrice.decrease ? (
-                  <img src={arrowDown} alt='down' />
+                  <img className={styles.icon} src={arrowDown} alt='down' />
                 ) : (
-                  <img src={arrowUp} alt='up' />
+                  <img className={styles.icon} src={arrowUp} alt='up' />
                 )}
               </span>
               <span className={styles.price}>{oilPrice.price}</span>
               <span className={styles.difference}>{oilPrice.difference}</span>
-              <span className={styles.change + `${oilPrice.decrease ? ` ${styles.decrease}` : ` ${styles.increase}`}`}>{oilPrice.change}</span>
+              <span className={styles.percent + `${oilPrice.decrease ? ` ${styles.decrease}` : ` ${styles.increase}`}`}>{oilPrice.change}</span>
             </div>
           )
         })}
