@@ -76,7 +76,7 @@ export const Hero = ({ block, styles, images }) => {
       </div>
       <div className={styles.pageDownIconContainer}>
         <Image className={styles.icon} images={images} src={block.pageDownIcon.image} title={block.pageDownIcon.title} alt={block.pageDownIcon.alt} />
-        <p>Scroll</p>
+        <p className={styles.label}>Scroll</p>
       </div>
     </section>
   )
