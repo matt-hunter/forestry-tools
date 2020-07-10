@@ -28,7 +28,7 @@ export const Hero = ({ block, styles, images }) => {
         const change = (((series.data[0][1] / series.data[1][1]) - 1) * 100).toFixed(2) + '%'
         return ({
           name,
-          decrease: price < 0,
+          decrease: difference < 0,
           price,
           difference: (difference < 0 ? '' : '+') + difference.toFixed(2),
           change: (difference < 0 ? '' : '+') + change
