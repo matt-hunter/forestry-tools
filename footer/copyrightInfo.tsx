@@ -14,9 +14,15 @@ export const CopyrightInfo = ({ block, styles, pages }) => {
     <section className={styles.default}>
       {enabled(block.blocks).map((block, i) => {
         return block.template === 'copyright-info-link' ? (
-          <p key={i} className={styles.paragraph}>{getPage(block.page)}</p>
+          <React.Fragment key={i}>
+            {i ? <p className={styles.divider}>|</p> : null}
+            <p className={styles.paragraph}>{getPage(block.page)}</p>
+          </React.Fragment>
         ) : block.template === 'copyright-info-text' ? (
-          <p key={i} className={styles.paragraph}>Text</p>
+          <React.Fragment key={i}>
+            {i ? <p className={styles.divider}>|</p> : null}
+            <p className={styles.paragraph}>Text</p>
+          </React.Fragment>
         ) : null
       })}
     </section>
