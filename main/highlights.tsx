@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { classNames, enabled, Image } from '../exports'
+import { Button } from '../shared'
 
 export const Highlights = ({ block, styles, images }) => {
   const [index, setIndex] = useState(0)
@@ -26,9 +27,7 @@ export const Highlights = ({ block, styles, images }) => {
           {block.highlights[index].image && <Image className={styles.image} images={images} src={block.highlights[index].image.image} title={block.highlights[index].image.title} alt={block.highlights[index].image.alt} />}
           {block.highlights[index].title && <h2 className={styles.title}>{block.highlights[index].title}</h2>}
           {block.highlights[index].body && <p className={styles.body}>{block.highlights[index].body}</p>}
-          <div className={styles.buttonContainer}>
-            <button className={styles.button}>Get in touch</button>
-          </div>
+          <Button text='Get in touch' direction='right' styles={styles} />
         </div>
       )}
     </section>

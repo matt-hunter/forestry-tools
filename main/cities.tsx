@@ -2,15 +2,15 @@ import React from 'react'
 
 import { classNames, enabled, Image } from '../exports'
 
+import { Button } from '../shared'
+
 export const Cities = ({ block, styles, images }) => {
   return (
     <section className={classNames(block, styles)}>
       <div className={styles.textContainer}>
         {block.title && <h1 className={styles.title}>{block.title}</h1>}
         {block.body && <p className={styles.body}>{block.body}</p>}
-        <div className={styles.buttonContainer}>
-          <button className={styles.button}>Get in touch</button>
-        </div>
+        <Button text='Get in touch' direction='right' styles={styles} />
       </div>
       {enabled(block.cities)[0] && (
         <div className={styles.featuredCity}>

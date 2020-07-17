@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Button } from '../shared'
+
 export const ContactInfo = ({ styles, contactInfo }) => {
   return (
     <section className={styles.default}>
@@ -8,9 +10,7 @@ export const ContactInfo = ({ styles, contactInfo }) => {
           {`+1.${contactInfo.phoneNumber.substr(0, 3)}.${contactInfo.phoneNumber.substr(3, 3)}.${contactInfo.phoneNumber.substr(6, 4)}`}
         </p>
       )}
-      <div className={styles.buttonContainer}>
-        <button className={styles.button}>Get in touch</button>
-      </div>
+      <Button text='Get in touch' direction='right' styles={styles} />
       {contactInfo.email && (
         <a className={styles.email} href={'mailto:' + contactInfo.email}>{contactInfo.email}</a>
       )}

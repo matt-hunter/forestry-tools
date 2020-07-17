@@ -1,7 +1,8 @@
 import React from 'react'
+import ReactPlayer from 'react-player'
 
 import { Image } from '../exports'
-import ReactPlayer from 'react-player'
+import { Button } from '../shared'
 
 export const ContactFormWithVideoBackground = ({ block, images, styles }) => {
   return (
@@ -25,7 +26,7 @@ export const ContactFormWithVideoBackground = ({ block, images, styles }) => {
           <label className={styles.messageLabel}>{block.messageLabel}</label>
           <textarea className={styles.message} />
         </fieldset>
-        <button className={styles.submit}>Send</button>
+        <Button text='Send' direction='right' styles={styles} />
       </form>
     </section>
   )
