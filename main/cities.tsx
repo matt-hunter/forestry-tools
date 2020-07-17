@@ -7,7 +7,7 @@ export const Cities = ({ block, styles, images }) => {
     <section className={classNames(block, styles)}>
       <div className={styles.textContainer}>
         {block.title && <h1 className={styles.title}>{block.title}</h1>}
-        {block.body && <p className={block.body}>{block.body}</p>}
+        {block.body && <p className={styles.body}>{block.body}</p>}
         <div className={styles.buttonContainer}>
           <button className={styles.button}>Get in touch</button>
         </div>
