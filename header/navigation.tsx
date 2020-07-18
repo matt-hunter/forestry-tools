@@ -7,7 +7,7 @@ export const Navigation = ({ block, styles, pages, setMenuOpen }) => {
     const page = pages.find(page => filePath.includes(page.relativePath))
     return page && page.filePath ? (
       <Link activeClassName={styles.active} className={styles.link} partiallyActive={page.filePath !== '/'} to={page.filePath} onClick={closeMenu}>
-        <p>{page.title}</p>
+        <p className={styles.label}>{page.title}</p>
       </Link>
     ) : 'Link Missing'
   }
