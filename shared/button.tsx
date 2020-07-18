@@ -10,7 +10,7 @@ export const Button = ({ styles, text, direction }) => {
         {direction === 'right' && (
           <img className={styles.arrow} src={rightArrow} alt='right arrow' />
         )}
-        {direction === 'down' && (
+        {direction === 'Down' && (
           <img className={styles.arrow} src={downArrow} alt='down arrow' />
         )}
         <p className={styles.label}>{text}</p>

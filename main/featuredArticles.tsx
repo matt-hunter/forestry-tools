@@ -1,14 +1,42 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
-import { classNames } from '../exports'
+import { classNames, Image } from '../exports'
+import { Button } from '../shared'
 
-export const FeaturedArticles = ({ block, styles }) => {
-  const blockValues = Object.entries(block).filter(([name, value]) => value !== null)
-    .map(([name, value]) => ({ name, value }))
-  console.log(block.template, blockValues)
+export const FeaturedArticles = ({ block, styles, articles, pages, images }) => {
+  const getPage = filePath => pages.find(page => filePath.includes(page.relativePath))
+  const featured = block.articles.map(filename => {
+    const article = articles.find(article => article.fileAbsolutePath.includes(filename))
+    const page = getPage(article.frontmatter.parent)
+    return ({
+      title: article.frontmatter.title,
+      excerpt: article.excerpt,
+      image: article.frontmatter.heroImage.relativePath,
+      path: page.filePath + '/' + article.fields.slug
+    })
+  })
+
   return (
     <section className={classNames(block, styles)}>
-      <p>{block.template}</p>
+      <h1 className={styles.title}>{block.title}</h1>
+      <div className={styles.sidebar}>
+        <h2 className={styles.subtitle}>{block.subtitle}</h2>
+        <p className={styles.body}>{block.body}</p>
+        <Button styles={styles} text={block.button.label} direction={block.button.direction} />
+      </div>
+      <div className={styles.articles}>
+        {featured.map((article, i) => {
+          return (
+            <Link key={i} to={article.path} className={styles.link}>
+              <Image images={images} className={styles.article} container='div' src={article.image}>
+                <h3 className={styles.title}>{article.title}</h3>
+                <p className={styles.excerpt}>{article.excerpt}</p>
+              </Image>
+            </Link>
+          )
+        })}
+      </div>
     </section>
   )
 }

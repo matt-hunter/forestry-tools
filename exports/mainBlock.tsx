@@ -2,13 +2,13 @@ import React from 'react'
 
 import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, Posts, RecentArticles, Slideshow, StaticImage, Testimonial } from '../main'
 
-export default (block, i, images, styles) => {
+export default (block, i, images, styles, articles, pages) => {
   return block.template === 'main-animated-image' ? (
     <AnimatedImage key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-articles-grid' ? (
-    <ArticlesGrid key={i} block={block} images={images} styles={styles} />
+    <ArticlesGrid key={i} block={block} images={images} styles={styles} articles={articles} pages={pages} />
   ) : block.template === 'main-articles-slider' ? (
-    <ArticlesSlider key={i} block={block} images={images} styles={styles} />
+    <ArticlesSlider key={i} block={block} images={images} styles={styles} articles={articles} />
   ) : block.template === 'main-cities' ? (
     <Cities key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-company-merger' ? (
@@ -20,7 +20,7 @@ export default (block, i, images, styles) => {
   ) : block.template === 'main-content-tabs' ? (
     <ContentTabs key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'main-featured-articles' ? (
-    <FeaturedArticles key={i} block={block} images={images} styles={styles} />
+    <FeaturedArticles key={i} block={block} images={images} styles={styles} articles={articles} pages={pages} />
   ) : block.template === 'main-filtered-images-slider' ? (
     <FilteredImagesSlider key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-gallery' ? (
@@ -44,7 +44,7 @@ export default (block, i, images, styles) => {
   ) : block.template === 'main-posts' ? (
     <Posts key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-recent-articles' ? (
-    <RecentArticles key={i} block={block} images={images} styles={styles} />
+    <RecentArticles key={i} block={block} images={images} styles={styles} articles={articles} pages={pages} />
   ) : block.template === 'main-slideshow' ? (
     <Slideshow key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-static-image' ? (
