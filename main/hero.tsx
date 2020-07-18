@@ -10,6 +10,14 @@ export const Hero = ({ block, styles, images }) => {
   const [oilData, setOilData] = useState([])
   const [oilPrices, setOilPrices] = useState([])
 
+  const scrollDown = () => {
+    document.getElementById('main').scroll({
+      left: 0,
+      top: window.innerHeight,
+      behavior: 'smooth'
+    })
+  }
+
   useEffect(() => {
     window.fetch('http://api.eia.gov/series/?api_key=2c64d808bf1a095b0a22eb601b723c20&series_id=PET.RWTC.D;PET.RBRTE.D').then(async res => {
       const data = await res.json()
@@ -74,7 +82,7 @@ export const Hero = ({ block, styles, images }) => {
         <h2 className={styles.largeHeading}>{block.largeHeading}</h2>
         <p className={styles.body}>{block.body}</p>
       </div>
-      <div className={styles.pageDownIconContainer}>
+      <div onClick={scrollDown} className={styles.pageDownIconContainer}>
         <Image className={styles.icon} images={images} src={block.pageDownIcon.image} title={block.pageDownIcon.title} alt={block.pageDownIcon.alt} />
         <p className={styles.label}>Scroll</p>
       </div>
