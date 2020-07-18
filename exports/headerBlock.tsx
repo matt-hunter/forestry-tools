@@ -2,7 +2,7 @@ import React from 'react'
 
 import { CallButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search } from '../header'
 
-export default (block, i, images, styles, pages, contactInfo) => {
+export default (block, i, images, styles, pages, contactInfo, setMenuOpen) => {
   return block.template === 'header-call-button' ? (
     <CallButton key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'header-contact-form-with-video-background' ? (
@@ -18,7 +18,7 @@ export default (block, i, images, styles, pages, contactInfo) => {
   ) : block.template === 'header-logo' ? (
     <Logo key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'header-navigation' ? (
-    <Navigation key={i} block={block} styles={styles} pages={pages} />
+    <Navigation key={i} block={block} styles={styles} pages={pages} setMenuOpen={setMenuOpen} />
   ) : block.template === 'header-search' ? (
     <Search key={i} block={block} styles={styles} images={images} />
   ) : <p key={i}>{block.template} not defined</p>
