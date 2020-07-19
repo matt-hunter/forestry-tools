@@ -2,11 +2,12 @@ import React from 'react'
 
 import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, Posts, RecentArticles, Slideshow, StaticImage, Testimonial } from '../main'
 
-export default (block, i, images, styles, articles, pages) => {
+export default (block, i, images, styles, articles, pages, tag) => {
+  console.log(tag)
   return block.template === 'main-animated-image' ? (
     <AnimatedImage key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-articles-grid' ? (
-    <ArticlesGrid key={i} block={block} images={images} styles={styles} articles={articles} pages={pages} />
+    <ArticlesGrid key={i} block={block} images={images} styles={styles} articles={articles} pages={pages} tag={tag} />
   ) : block.template === 'main-articles-slider' ? (
     <ArticlesSlider key={i} block={block} images={images} styles={styles} articles={articles} />
   ) : block.template === 'main-cities' ? (

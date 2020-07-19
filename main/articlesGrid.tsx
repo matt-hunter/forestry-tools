@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 
 import { classNames, Image } from '../exports'
 
-export const ArticlesGrid = ({ block, styles, images, articles, pages }) => {
-  const [filter, setFilter] = useState('')
+export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) => {
   const [tags, setTags] = useState([])
 
   useEffect(() => {
     const tags = []
-    articles.forEach(article => article.frontmatter.tags.forEach(tag => tags.push(tag.toLowerCase())))
+    articles.forEach(article => article.frontmatter.tags.forEach(articleTag => tags.push(articleTag.toLowerCase())))
     tags.sort((a, b) => a.toLowerCase() > b.toLowerCase() ? 1 : -1)
     setTags(['all', ...new Set(tags)])
   }, [articles])
@@ -21,29 +20,32 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages }) => {
       <div className={styles.categoriesContainer}>
         <h1 className={styles.label}>Categories</h1>
         <div className={styles.categories}>
-          {tags.map((tag, i) => {
+          {tags.map((selected, i) => {
             const applyFilter = () => {
-              if (tag === 'all' || tag === filter) return setFilter('')
-              setFilter(tag)
+              if (selected === 'all' || selected === tag) {
+                navigate('?tag=')
+              } else {
+                navigate(`?tag=${selected}`)
+              }
             }
             return (
-              <button key={i} className={styles.category + `${tag === 'all' && !filter ? ` ${styles.active}` : filter === tag ? ` ${styles.active}` : ''}`} onClick={applyFilter}>{tag}</button>
+              <button key={i} className={styles.category + `${selected === 'all' && !tag ? ` ${styles.active}` : selected === tag ? ` ${styles.active}` : ''}`} onClick={applyFilter}>{selected}</button>
             )
           })}
         </div>
       </div>
       <div className={styles.articles}>
-        {articles.filter(article => !filter ? article : article.frontmatter.tags.find(tag => tag.toLowerCase() === filter)).map((article, i) => {
-          const page = getPage(article.frontmatter.parent)
+        {articles.filter(article => !tag ? article : article.frontmatter.tags.find(articleTag => articleTag.toLowerCase() === tag)).map((article, i) => {
+          const link = getPage(article.frontmatter.parent).filePath + '/' + article.fields.slug + `${tag ? '?tag=' + tag : ''}`
           return (
             <div key={i} className={styles.article}>
-              <Link className={styles.imageLink} to={page.filePath + '/' + article.fields.slug}>
+              <Link className={styles.imageLink} to={link}>
                 <Image images={images} className={styles.image} src={article.frontmatter.heroImage.relativePath} container='div' />
               </Link>
-              <Link className={styles.titleLink} to={page.filePath + '/' + article.fields.slug}>
+              <Link className={styles.titleLink} to={link}>
                 <h2 className={styles.title}>{article.frontmatter.title}</h2>
               </Link>
-              <Link className={styles.buttonLink} to={page.filePath + '/' + article.fields.slug}>
+              <Link className={styles.buttonLink} to={link}>
                 <p className={styles.button}>Read Full Story →</p>
               </Link>
             </div>
