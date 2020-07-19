@@ -18,17 +18,19 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages }) => {
 
   return (
     <section className={classNames(block, styles)}>
-      <div className={styles.categories}>
+      <div className={styles.categoriesContainer}>
         <h1 className={styles.label}>Categories</h1>
-        {tags.map((tag, i) => {
-          const applyFilter = () => {
-            if (tag === 'all' || tag === filter) return setFilter('')
-            setFilter(tag)
-          }
-          return (
-            <button key={i} className={styles.button + `${tag === 'all' && !filter ? ` ${styles.active}` : filter === tag ? ` ${styles.active}` : ''}`} onClick={applyFilter}>{tag}</button>
-          )
-        })}
+        <div className={styles.categories}>
+          {tags.map((tag, i) => {
+            const applyFilter = () => {
+              if (tag === 'all' || tag === filter) return setFilter('')
+              setFilter(tag)
+            }
+            return (
+              <button key={i} className={styles.category + `${tag === 'all' && !filter ? ` ${styles.active}` : filter === tag ? ` ${styles.active}` : ''}`} onClick={applyFilter}>{tag}</button>
+            )
+          })}
+        </div>
       </div>
       <div className={styles.articles}>
         {articles.filter(article => !filter ? article : article.frontmatter.tags.find(tag => tag.toLowerCase() === filter)).map((article, i) => {
