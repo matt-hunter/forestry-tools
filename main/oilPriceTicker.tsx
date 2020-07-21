@@ -34,8 +34,8 @@ export const OilPriceTicker = ({ styles }) => {
       }
 
       setOilPrices([
-        calculateObject('WTI Crude Oil', oilData[0]),
-        calculateObject('Brent Crude Oil', oilData[1])
+        calculateObject('WTI', oilData[0]),
+        calculateObject('Brent', oilData[1])
       ])
     }
   }, [oilData])
