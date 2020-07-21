@@ -9,11 +9,9 @@ export const OilPriceTicker = ({ styles }) => {
   const [oilPrices, setOilPrices] = useState([])
 
   useEffect(() => {
-    window.fetch('http://api.eia.gov/series/?api_key=2c64d808bf1a095b0a22eb601b723c20&series_id=PET.RWTC.D;PET.RBRTE.D').then(async res => {
+    typeof window !== 'undefined' && window.fetch('http://api.eia.gov/series/?api_key=2c64d808bf1a095b0a22eb601b723c20&series_id=PET.RWTC.D;PET.RBRTE.D').then(async res => {
       const data = await res.json()
       setOilData(data.series)
-    // setWti(data.series[0].data)
-    // setBrent(data.series[1].data)
     })
   }, [])
 
