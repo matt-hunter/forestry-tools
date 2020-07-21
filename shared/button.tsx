@@ -14,27 +14,25 @@ type buttonProps = {
 }
 
 export const Button = ({ styles, text, direction, pages, onClick, link }: buttonProps) => {
-  const getPage = filePath => pages.find(page => filePath.includes(page.relativePath))
+  const page = link && pages.length && pages.find(page => link.includes(page.relativePath))
+
+  const Icon = () => {
+    return direction === 'right' ? (
+      <img className={styles.arrow} src={rightArrow} alt='right arrow' />
+    ) : (
+      <img className={styles.arrow} src={downArrow} alt='down arrow' />
+    )
+  }
   return (
     <div className={styles.buttonContainer}>
-      {link ? (
-        <Link to={getPage(link)} className={styles.button}>
-          {direction === 'right' && (
-            <img className={styles.arrow} src={rightArrow} alt='right arrow' />
-          )}
-          {direction === 'Down' && (
-            <img className={styles.arrow} src={downArrow} alt='down arrow' />
-          )}
+      {page ? (
+        <Link to={page.filePath} className={styles.button}>
+          <Icon />
           <p className={styles.label}>{text}</p>
         </Link>
       ) : (
-        <button onClick={onClick || null} className={styles.button}>
-          {direction === 'right' && (
-            <img className={styles.arrow} src={rightArrow} alt='right arrow' />
-          )}
-          {direction === 'Down' && (
-            <img className={styles.arrow} src={downArrow} alt='down arrow' />
-          )}
+        <button onClick={onClick} className={styles.button}>
+          <Icon />
           <p className={styles.label}>{text}</p>
         </button>
       )}
