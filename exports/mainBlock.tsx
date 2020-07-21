@@ -49,7 +49,7 @@ export default (block, i, images, styles, articles, pages, tag) => {
   ) : block.template === 'main-slideshow' ? (
     <Slideshow key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-static-image' ? (
-    <StaticImage key={i} block={block} images={images} styles={styles} />
+    <StaticImage key={i} block={block} images={images} styles={styles} pages={pages} />
   ) : block.template === 'main-testimonial' ? (
     <Testimonial key={i} block={block} styles={styles} images={images} />
   ) : <p key={i}>{block.template} not defined</p>

@@ -26,7 +26,7 @@ export default ({ className, container, src, alt = '', title = '', style, childr
     image && image.childImageSharp && image.childImageSharp.fluid ? (
       <BackgroundImage className={className} Tag={container || 'div'} style={style} fluid={image.childImageSharp.fluid} title={title} alt={alt || title}>{children}</BackgroundImage>
     ) : image && image.publicURL ? (
-      <div className={className} style={{ ...style, backgroundImage: `url("${image.publicURL}")` }} />
+      <div className={className} style={{ ...style, backgroundImage: `url("${image.publicURL}")` }}>{children}</div>
     ) : null
   )
 }
