@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Parallax from 'parallax-js'
 
 import { classNames, enabled, Image } from '../exports'
 
 import { OilPriceTicker } from './'
 
 export const Hero = ({ block, styles, images }) => {
+  const [parallaxInstance, setParallaxInstance] = useState(undefined)
   const scrollDown = () => {
     document.getElementById('main').scroll({
       left: 0,
@@ -12,6 +14,11 @@ export const Hero = ({ block, styles, images }) => {
       behavior: 'smooth'
     })
   }
+
+  useEffect(() => {
+    const hero = document.getElementById('hero')
+    setParallaxInstance(new Parallax(hero))
+  }, [])
 
   return (
     <section id='hero' className={classNames(block, styles)}>
