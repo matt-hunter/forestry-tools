@@ -32,6 +32,7 @@ export const Hero = ({ block, styles, images }) => {
         <Image className={styles.icon} images={images} src={block.pageDownIcon.image} title={block.pageDownIcon.title} alt={block.pageDownIcon.alt} />
         <p className={styles.label}>Scroll</p>
       </div>
+      {block.showRedBar && <div className={styles.redBar} />}
     </section>
   )
 }

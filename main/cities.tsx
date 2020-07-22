@@ -35,6 +35,7 @@ export const Cities = ({ block, styles, images, toggleForm }) => {
           })}
         </div>
       )}
+      {block.showRedBar && <div className={styles.redBar} />}
     </section>
   )
 }
