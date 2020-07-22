@@ -17,9 +17,9 @@ export const Button = ({ styles, text, direction, pages, onClick, link }: button
   const page = link && pages.length && pages.find(page => link.includes(page.relativePath))
 
   const Icon = () => {
-    return direction === 'right' ? (
+    return direction && direction.toLowerCase() === 'right' ? (
       <img className={styles.arrow} src={rightArrow} alt='right arrow' />
-    ) : direction === 'left' ? (
+    ) : direction && direction.toLowerCase() === 'down' ? (
       <img className={styles.arrow} src={downArrow} alt='down arrow' />
     ) : null
   }
