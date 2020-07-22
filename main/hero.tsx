@@ -16,7 +16,7 @@ export const Hero = ({ block, styles, images }) => {
   }
 
   useEffect(() => {
-    const hero = document.getElementById('hero')
+    const hero = Array.from(document.getElementsByClassName(styles.backgrounds))[0]
     setParallaxInstance(new Parallax(hero))
   }, [])
 
