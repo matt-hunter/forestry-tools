@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Button } from '../shared'
 
-export const ContactInfo = ({ styles, contactInfo }) => {
+export const ContactInfo = ({ styles, contactInfo, toggleForm }) => {
   return (
     <section className={styles.default}>
       {contactInfo.phoneNumber && (
@@ -10,7 +10,7 @@ export const ContactInfo = ({ styles, contactInfo }) => {
           {`+1.${contactInfo.phoneNumber.substr(0, 3)}.${contactInfo.phoneNumber.substr(3, 3)}.${contactInfo.phoneNumber.substr(6, 4)}`}
         </p>
       )}
-      <Button text='Get in touch' direction='right' styles={styles} />
+      <Button text='Get in touch' direction='right' styles={styles} onClick={toggleForm} />
       {contactInfo.email && (
         <a className={styles.email} href={'mailto:' + contactInfo.email}>{contactInfo.email}</a>
       )}

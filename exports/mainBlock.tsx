@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, Posts, RecentArticles, Slideshow, StaticImage, Testimonial } from '../main'
+import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, Posts, RecentArticles, Slideshow, StaticImage, Testimonial, toggleForm } from '../main'
 
 export default (block, i, images, styles, articles, pages, tag) => {
   console.log(tag)

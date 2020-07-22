@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { Button } from '../shared'
 
-export const Navigation = ({ block, styles, pages, setMenuOpen }) => {
+export const Navigation = ({ block, styles, pages, setMenuOpen, toggleForm }) => {
   const closeMenu = () => setMenuOpen(false)
   const getPage = filePath => {
     const page = pages.find(page => filePath.includes(page.relativePath))
@@ -20,6 +21,7 @@ export const Navigation = ({ block, styles, pages, setMenuOpen }) => {
             {getPage(item)}
           </React.Fragment>
         ))}
+        <Button styles={styles} text='Contact' onClick={toggleForm} />
       </ul>
     </nav>
   )
