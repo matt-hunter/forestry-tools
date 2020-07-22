@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import Parallax from 'parallax-js'
+import React from 'react'
+import Tilt from 'react-parallax-tilt'
 
 import { classNames, enabled, Image } from '../exports'
 
 import { OilPriceTicker } from './'
 
 export const Hero = ({ block, styles, images }) => {
-  const [parallaxInstance, setParallaxInstance] = useState(undefined)
   const scrollDown = () => {
     document.getElementById('main').scroll({
       left: 0,
@@ -15,18 +14,22 @@ export const Hero = ({ block, styles, images }) => {
     })
   }
 
-  useEffect(() => {
-    const hero = Array.from(document.getElementsByClassName(styles.backgrounds))[0]
-    setParallaxInstance(new Parallax(hero))
-  }, [])
-
   return (
     <section id='hero' className={classNames(block, styles)}>
       <div className={styles.backgrounds}>
         {enabled(block.backgrounds).map((background, i) => (
-          <div key={i} className={styles.imageContainer + `${background.class ? ` ${styles[background.class]}` : ''}`}>
-            <Image className={styles.image} images={images} src={block.backgrounds[i].image} title={background.title} alt={background.alt} />
-          </div>
+          <Tilt
+            key={i}
+            className='parallax-effect-glare-scale'
+            perspective={500}
+            glareEnable
+            glareMaxOpacity={0.45}
+            scale={1.02}
+          >
+            <div className={styles.imageContainer + `${background.class ? ` ${styles[background.class]}` : ''}`}>
+              <Image className={styles.image} images={images} src={block.backgrounds[i].image} title={background.title} alt={background.alt} />
+            </div>
+          </Tilt>
         ))}
       </div>
       <OilPriceTicker styles={styles} />
