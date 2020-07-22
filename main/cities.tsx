@@ -4,13 +4,13 @@ import { classNames, enabled, Image } from '../exports'
 
 import { Button } from '../shared'
 
-export const Cities = ({ block, styles, images }) => {
+export const Cities = ({ block, styles, images, toggleForm }) => {
   return (
     <section className={classNames(block, styles)}>
       <div className={styles.textContainer}>
         {block.title && <h1 className={styles.title}>{block.title}</h1>}
         {block.body && <p className={styles.body}>{block.body}</p>}
-        <Button text='Get in touch' direction='right' styles={styles} />
+        <Button text='Get in touch' direction='right' styles={styles} onClick={toggleForm} />
       </div>
       {enabled(block.cities)[0] && (
         <div className={styles.featuredCity}>

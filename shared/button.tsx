@@ -23,6 +23,7 @@ export const Button = ({ styles, text, direction, pages, onClick, link }: button
       <img className={styles.arrow} src={downArrow} alt='down arrow' />
     ) : null
   }
+
   const Text = () => {
     return text ? (
       <p className={styles.label}>{text}</p>

@@ -5,6 +5,9 @@ import { Image } from '../exports'
 import { Button } from '../shared'
 
 export const ContactFormWithVideoBackground = ({ block, images, styles }) => {
+  const formSubmit = e => {
+    e.preventDefault()
+  }
   return (
     <section className={styles.default}>
       <div className={styles.videoContainer}>
@@ -26,7 +29,7 @@ export const ContactFormWithVideoBackground = ({ block, images, styles }) => {
           <label className={styles.messageLabel}>{block.messageLabel}</label>
           <textarea className={styles.message} />
         </fieldset>
-        <Button text='Send' direction='right' styles={styles} />
+        <Button text='Send' direction='right' styles={styles} onClick={formSubmit} />
       </form>
     </section>
   )

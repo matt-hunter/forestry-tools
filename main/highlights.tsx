@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { classNames, enabled, Image } from '../exports'
 import { Button } from '../shared'
 
-export const Highlights = ({ block, styles, images }) => {
+export const Highlights = ({ block, styles, images, toggleForm }) => {
   const [index, setIndex] = useState(0)
   return (
     <section className={classNames(block, styles)}>
@@ -27,7 +27,7 @@ export const Highlights = ({ block, styles, images }) => {
           {block.highlights[index].image && <Image className={styles.image} images={images} src={block.highlights[index].image.image} title={block.highlights[index].image.title} alt={block.highlights[index].image.alt} />}
           {block.highlights[index].title && <h2 className={styles.title}>{block.highlights[index].title}</h2>}
           {block.highlights[index].body && <p className={styles.body}>{block.highlights[index].body}</p>}
-          <Button text='Get in touch' direction='right' styles={styles} />
+          <Button text='Get in touch' direction='right' styles={styles} onClick={toggleForm} />
         </div>
       )}
     </section>

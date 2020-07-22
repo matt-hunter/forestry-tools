@@ -1,9 +1,8 @@
 import React from 'react'
 
-import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, Posts, RecentArticles, Slideshow, StaticImage, Testimonial, toggleForm } from '../main'
+import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, Posts, RecentArticles, Slideshow, StaticImage, Testimonial } from '../main'
 
-export default (block, i, images, styles, articles, pages, tag) => {
-  console.log(tag)
+export default (block, i, images, styles, articles, pages, tag, toggleForm) => {
   return block.template === 'main-animated-image' ? (
     <AnimatedImage key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-articles-grid' ? (
@@ -11,7 +10,7 @@ export default (block, i, images, styles, articles, pages, tag) => {
   ) : block.template === 'main-articles-slider' ? (
     <ArticlesSlider key={i} block={block} images={images} styles={styles} articles={articles} />
   ) : block.template === 'main-cities' ? (
-    <Cities key={i} block={block} images={images} styles={styles} />
+    <Cities key={i} block={block} images={images} styles={styles} toggleForm={toggleForm} />
   ) : block.template === 'main-company-merger' ? (
     <CompanyMerger key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-contact-form' ? (
@@ -31,7 +30,7 @@ export default (block, i, images, styles, articles, pages, tag) => {
   ) : block.template === 'main-hero-slider' ? (
     <HeroSlider key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'main-highlights' ? (
-    <Highlights key={i} block={block} images={images} styles={styles} />
+    <Highlights key={i} block={block} images={images} styles={styles} toggleForm={toggleForm} />
   ) : block.template === 'main-image-bar' ? (
     <ImageBar key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'main-images' ? (
@@ -49,7 +48,7 @@ export default (block, i, images, styles, articles, pages, tag) => {
   ) : block.template === 'main-slideshow' ? (
     <Slideshow key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-static-image' ? (
-    <StaticImage key={i} block={block} images={images} styles={styles} pages={pages} />
+    <StaticImage key={i} block={block} images={images} styles={styles} pages={pages} toggleForm={toggleForm} />
   ) : block.template === 'main-testimonial' ? (
     <Testimonial key={i} block={block} styles={styles} images={images} />
   ) : <p key={i}>{block.template} not defined</p>
