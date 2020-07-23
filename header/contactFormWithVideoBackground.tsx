@@ -27,7 +27,7 @@ export const ContactFormWithVideoBackground = ({ block, images, styles }) => {
         </fieldset>
         <fieldset className={styles.messageSet}>
           <label className={styles.messageLabel}>{block.messageLabel}</label>
-          <textarea className={styles.message} />
+          <textarea rows={1} className={styles.message} />
         </fieldset>
         <Button text='Send' direction='right' styles={styles} onClick={formSubmit} />
       </form>
