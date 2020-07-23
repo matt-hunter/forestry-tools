@@ -1,5 +1,4 @@
 import React from 'react'
-import Tilt from 'react-parallax-tilt'
 
 import { classNames, enabled, Image } from '../exports'
 
@@ -18,18 +17,9 @@ export const Hero = ({ block, styles, images }) => {
     <section id='hero' className={classNames(block, styles)}>
       <div className={styles.backgrounds}>
         {enabled(block.backgrounds).map((background, i) => (
-          <Tilt
-            key={i}
-            className='parallax-effect-glare-scale'
-            perspective={500}
-            glareEnable
-            glareMaxOpacity={0.45}
-            scale={1.02}
-          >
-            <div className={styles.imageContainer + `${background.class ? ` ${styles[background.class]}` : ''}`}>
-              <Image className={styles.image} images={images} src={block.backgrounds[i].image} title={background.title} alt={background.alt} />
-            </div>
-          </Tilt>
+          <div key={i} className={styles.imageContainer + `${background.class ? ` ${styles[background.class]}` : ''}`}>
+            <Image className={styles.image} images={images} src={block.backgrounds[i].image} title={background.title} alt={background.alt} />
+          </div>
         ))}
       </div>
       <OilPriceTicker styles={styles} />

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, Posts, RecentArticles, Slideshow, StaticImage, Testimonial } from '../main'
+import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, Posts, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../main'
 
 export default (block, i, images, styles, articles, pages, tag, toggleForm) => {
   return block.template === 'main-animated-image' ? (
@@ -45,6 +45,8 @@ export default (block, i, images, styles, articles, pages, tag, toggleForm) => {
     <Posts key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-recent-articles' ? (
     <RecentArticles key={i} block={block} images={images} styles={styles} articles={articles} pages={pages} />
+  ) : block.template === 'main-rich-text' ? (
+    <RichText key={i} block={block} styles={styles} />
   ) : block.template === 'main-slideshow' ? (
     <Slideshow key={i} block={block} images={images} styles={styles} />
   ) : block.template === 'main-static-image' ? (

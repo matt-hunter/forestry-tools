@@ -20,10 +20,11 @@ import { Map } from './map'
 import { OilPriceTicker } from './oilPriceTicker'
 import { Posts } from './posts'
 import { RecentArticles } from './recentArticles'
+import { RichText } from './richText'
 import { Slideshow } from './slideshow'
 import { StaticImage } from './staticImage'
 import { Testimonial } from './testimonial'
 
-export { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, OilPriceTicker, Posts, RecentArticles, Slideshow, StaticImage, Testimonial }
+export { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, OilPriceTicker, Posts, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
 
 export default { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, Posts, RecentArticles, Slideshow, StaticImage, Testimonial }
