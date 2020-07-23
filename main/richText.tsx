@@ -1,9 +1,10 @@
 import React from 'react'
+import parse from 'html-react-parser'
 
-export const RichText = ({ block, styles }) => {
-  return (
-    <div className={styles.default}>
-      {block.template}
-    </div>
-  )
-}
+import { classNames } from '../exports'
+
+export const RichText = ({ block, styles }) => (
+  <section className={classNames(block, styles)}>
+    {block.body && parse(block.body)}
+  </section>
+)
