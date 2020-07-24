@@ -24,9 +24,18 @@ export const Hero = ({ block, styles, images }) => {
       </div>
       <OilPriceTicker styles={styles} />
       <div className={styles.textContainer}>
-        <h1 className={styles.smallHeading}>{block.smallHeading}</h1>
-        <h2 className={styles.largeHeading}>{block.largeHeading}</h2>
-        <p className={styles.body}>{block.body}</p>
+        {block.smallHeading && (
+          <h1 className={styles.smallHeading}>{block.smallHeading}</h1>
+        )}
+        {block.largeHeading && (
+          <h2 className={styles.largeHeading}>{block.largeHeading}</h2>
+        )}
+        {block.mediumHeading && (
+          <h3 className={styles.mediumHeading}>{block.mediumHeading}</h3>
+        )}
+        {block.body && (
+          <p className={styles.body}>{block.body}</p>
+        )}
       </div>
       <div onClick={scrollDown} className={styles.pageDownIconContainer}>
         <Image className={styles.icon} images={images} src={block.pageDownIcon.image} title={block.pageDownIcon.title} alt={block.pageDownIcon.alt} />
