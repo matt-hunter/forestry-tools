@@ -32,8 +32,8 @@ export const Highlights = ({ block, styles, images, toggleForm }) => {
             <Button text='Get in touch' direction='right' styles={styles} onClick={toggleForm} />
           </div>
         )}
-        {block.showRedBar && <div className={styles.redBar} />}
       </div>
+      {block.showRedBar && <div className={styles.redBar} />}
     </section>
   )
 }
