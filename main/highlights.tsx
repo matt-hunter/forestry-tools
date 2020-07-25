@@ -31,12 +31,10 @@ export const Highlights = ({ block, styles, images, toggleForm }) => {
                 {block.showRedBar && <div className={styles.redBar} />}
               </Image>
             )}
-            <div className={styles.content}>
-              {<p className={styles.index}>{`${index < 10 ? '0' : ''}${index + 1}`}</p>}
-              {block.highlights[index].title && <h2 className={styles.title}>{block.highlights[index].title}</h2>}
-              {block.highlights[index].body && <p className={styles.body}>{block.highlights[index].body}</p>}
-              <Button text='Get in touch' direction='right' styles={styles} onClick={toggleForm} />
-            </div>
+            {<p className={styles.index}>{`${index < 10 ? '0' : ''}${index + 1}`}</p>}
+            {block.highlights[index].title && <h2 className={styles.title}>{block.highlights[index].title}</h2>}
+            {block.highlights[index].body && <p className={styles.body}>{block.highlights[index].body}</p>}
+            <Button text='Get in touch' direction='right' styles={styles} onClick={toggleForm} />
           </div>
         )}
       </div>
