@@ -35,6 +35,8 @@ export const Highlights = ({ block, styles, images, toggleForm }) => {
               </div>
             )
           })}
+        </div>
+        <div className={styles.text}>
           {<p className={styles.index}>{`${index < 10 ? '0' : ''}${index + 1}`}</p>}
           {block.highlights[index].title && <h2 className={styles.title}>{block.highlights[index].title}</h2>}
           {block.highlights[index].body && <p className={styles.body}>{block.highlights[index].body}</p>}
