@@ -26,7 +26,11 @@ export const Highlights = ({ block, styles, images, toggleForm }) => {
         </div>
         {block.highlights[index] && (
           <div className={styles.detail}>
-            {block.highlights[index].image && <Image className={styles.image} images={images} src={block.highlights[index].image.image} title={block.highlights[index].image.title} alt={block.highlights[index].image.alt} container='div' />}
+            {block.highlights[index].image && (
+              <Image className={styles.image} images={images} src={block.highlights[index].image.image} title={block.highlights[index].image.title} alt={block.highlights[index].image.alt} container='div'>
+                {block.showRedBar && <div className={styles.redBar} />}
+              </Image>
+            )}
             {<p className={styles.index}>{`${index < 10 ? '0' : ''}${index + 1}`}</p>}
             {block.highlights[index].title && <h2 className={styles.title}>{block.highlights[index].title}</h2>}
             {block.highlights[index].body && <p className={styles.body}>{block.highlights[index].body}</p>}
@@ -34,7 +38,6 @@ export const Highlights = ({ block, styles, images, toggleForm }) => {
           </div>
         )}
       </div>
-      {block.showRedBar && <div className={styles.redBar} />}
     </section>
   )
 }
