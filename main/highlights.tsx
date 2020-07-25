@@ -25,6 +25,7 @@ export const Highlights = ({ block, styles, images, toggleForm }) => {
       {block.highlights[index] && (
         <div className={styles.detail}>
           {block.highlights[index].image && <Image className={styles.image} images={images} src={block.highlights[index].image.image} title={block.highlights[index].image.title} alt={block.highlights[index].image.alt} />}
+          {index && <p className={styles.index}>{`${index < 10 ? '0' : ''}${index + 1}`}</p>}
           {block.highlights[index].title && <h2 className={styles.title}>{block.highlights[index].title}</h2>}
           {block.highlights[index].body && <p className={styles.body}>{block.highlights[index].body}</p>}
           <Button text='Get in touch' direction='right' styles={styles} onClick={toggleForm} />
