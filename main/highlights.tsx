@@ -10,12 +10,13 @@ export const Highlights = ({ block, styles, images, toggleForm }) => {
       <div className={styles.content}>
         <h1 className={styles.heading}>{block.heading}</h1>
         <div className={styles.highlights}>
+          <div className={styles.fillspace} />
           {enabled(block.highlights).map((highlight, i) => {
             const setActiveIndex = () => {
               setIndex(i)
             }
-            return (
-              <div key={i} className={styles.highlight + `${index === i ? ` ${styles.active}` : ''}`} onClick={setActiveIndex}>
+            return index !== i && (
+              <div key={i} className={styles.highlight} onClick={setActiveIndex}>
                 <Image className={styles.image} images={images} container='div' src={highlight.image.image} title={highlight.image.title} alt={highlight.image.alt}>
                   <p className={styles.index}>{`${i < 10 ? '0' : ''}${i + 1}`}</p>
                 </Image>
