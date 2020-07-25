@@ -8,8 +8,8 @@ export const Highlights = ({ block, styles, images, toggleForm }) => {
 
   return (
     <section className={classNames(block, styles)}>
-      <h1 className={styles.heading}>{block.heading}</h1>
       <div className={styles.content}>
+        <h1 className={styles.heading}>{block.heading}</h1>
         <div className={styles.highlights}>
           <div className={styles.fillspace} />
           {enabled(block.highlights).map((highlight, i) => {
