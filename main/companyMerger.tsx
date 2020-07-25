@@ -15,7 +15,9 @@ export const CompanyMerger = ({ block, styles, images }) => {
             <React.Fragment key={i}>
               {i > 0 && <p className={styles.plusSymbol}>+</p>}
               <div className={styles.company}>
-                <Image className={styles.image} images={images} src={company.logo.image} title={company.logo.title} alt={company.logo.alt} container='div' />
+                <div className={styles.imageContainer}>
+                  <Image className={styles.image} images={images} src={company.logo.image} title={company.logo.title} alt={company.logo.alt} container='div' />
+                </div>
                 {company.description && <p className={styles.description}>{company.description}</p>}
               </div>
             </React.Fragment>
