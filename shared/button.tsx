@@ -10,10 +10,12 @@ type buttonProps = {
   direction?: string,
   pages?: any,
   onClick?: any,
-  link?: string
+  link?: string,
+  className?: string,
+  type?: string
 }
 
-export const Button = ({ styles, text, direction, pages, onClick, link }: buttonProps) => {
+export const Button = ({ styles, text, direction, pages, onClick, link, className, type = 'button' }: buttonProps) => {
   const page = link && pages.length && pages.find(page => link.includes(page.relativePath))
 
   const Icon = () => {
@@ -33,12 +35,12 @@ export const Button = ({ styles, text, direction, pages, onClick, link }: button
   return (
     <div className={styles.buttonContainer}>
       {page ? (
-        <Link to={page.filePath} className={styles.button}>
+        <Link to={page.filePath} className={styles.button + `${className ? ` ${className}` : ''}`}>
           <Icon />
           <Text />
         </Link>
       ) : (
-        <button onClick={onClick} className={styles.button}>
+        <button onClick={onClick} className={styles.button + `${className ? ` ${className}` : ''}`} type={type}>
           <Icon />
           <Text />
         </button>
