@@ -80,7 +80,7 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag, limi
         {articles.filter(article => !tag ? article : article.frontmatter.tags.find(articleTag => articleTag.toLowerCase() === tag)).filter((article, i) => !limit ? article : i < limit && article).map((article, i) => {
           const link = getPage(article.frontmatter.parent).filePath + '/' + article.fields.slug + `${tag ? '?tag=' + tag : ''}`
           return (
-            <div key={i} className={styles.article}>
+            <div key={i + article.fields.slug} className={styles.article}>
               <Link className={styles.imageLink} to={link}>
                 <Image images={images} className={styles.image} src={article.frontmatter.heroImage.relativePath} container='div' />
               </Link>
