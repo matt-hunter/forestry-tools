@@ -27,6 +27,7 @@ export const FeaturedArticles = ({ block, styles, articles, pages, images }) => 
   return (
     <section className={classNames(block, styles)}>
       <h1 className={styles.title}>{block.title}</h1>
+      <h1 className={styles.mobileTitle}>{block.mobileTitle}</h1>
       <div className={styles.sidebar}>
         <div className={styles.text}>
           <h2 className={styles.subtitle}>{block.subtitle}</h2>
