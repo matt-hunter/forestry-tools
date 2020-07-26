@@ -45,7 +45,7 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) =>
         </div>
         <select className={styles.categoriesList} onChange={e => applySelect(e)}>
           {tags.map((selected, i) => (
-            <option key={i} className={styles.category + `${selected === 'all' && !tag ? ` ${styles.active}` : selected === tag ? ` ${styles.active}` : ''}`} value={selected}>{selected[0].toUpperCase() + selected.slice(1)}</option>
+            <option key={i} className={styles.category + `${selected === 'all' && !tag ? ` ${styles.active}` : selected === tag ? ` ${styles.active}` : ''}`} value={selected} selected={selected === tag}>{selected[0].toUpperCase() + selected.slice(1)}</option>
           ))}
         </select>
       </div>
