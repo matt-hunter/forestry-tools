@@ -6,7 +6,7 @@ import { classNames, Image } from '../exports'
 
 import arrow from '../images/arrow-right.svg'
 
-export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) => {
+export const ArticlesGrid = ({ block, styles, images, articles, pages, tag, limit = 10 }) => {
   const [tags, setTags] = useState([])
 
   useEffect(() => {
@@ -48,14 +48,7 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) =>
       height: 40,
       width: 40
     })
-    // indicatorsContainer: provided => ({
-    //   ...provided,
-    //   height: 60,
-    //   width: 60
-    // })
   }
-
-  // <option key={i} className={styles.category + `${selected === 'all' && !tag ? ` ${styles.active}` : selected === tag ? ` ${styles.active}` : ''}`} value={selected} selected={selected === tag}>{selected[0].toUpperCase() + selected.slice(1)}</option>
 
   return (
     <section className={classNames(block, styles)}>
@@ -84,7 +77,7 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) =>
         />
       </div>
       <div className={styles.articles}>
-        {articles.filter(article => !tag ? article : article.frontmatter.tags.find(articleTag => articleTag.toLowerCase() === tag)).map((article, i) => {
+        {articles.filter(article => !tag ? article : article.frontmatter.tags.find(articleTag => articleTag.toLowerCase() === tag)).filter((article, i) => !limit ? article : i < limit && article).map((article, i) => {
           const link = getPage(article.frontmatter.parent).filePath + '/' + article.fields.slug + `${tag ? '?tag=' + tag : ''}`
           return (
             <div key={i} className={styles.article}>
