@@ -28,7 +28,9 @@ export const Cities = ({ block, styles, images, toggleForm }) => {
                 <Image className={styles.image} src={city.image.image} images={images} title={city.image.title} alt={city.image.alt} container='div'>
                   <div className={styles.shadow} />
                   <p className={styles.name} dangerouslySetInnerHTML={{ __html: city.name.replace(' ', '<br />') }} />
+                  <p className={styles.nameMobile}>{city.name}</p>
                   <p className={styles.nativeLanguageName} dangerouslySetInnerHTML={{ __html: city.nativeLanguageName.replace(' ', '<br />') }} />
+                  <p className={styles.nativeLanguageNameMobile}>{city.nativeLanguageName}</p>
                 </Image>
               </div>
             )
