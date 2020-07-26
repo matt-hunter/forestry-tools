@@ -28,8 +28,10 @@ export const FeaturedArticles = ({ block, styles, articles, pages, images }) => 
     <section className={classNames(block, styles)}>
       <h1 className={styles.title}>{block.title}</h1>
       <div className={styles.sidebar}>
-        <h2 className={styles.subtitle}>{block.subtitle}</h2>
-        <p className={styles.body}>{block.body}</p>
+        <div className={styles.text}>
+          <h2 className={styles.subtitle}>{block.subtitle}</h2>
+          <p className={styles.body}>{block.body}</p>
+        </div>
         <Button onClick={scrollDown} styles={styles} text={block.button.label} direction={block.button.direction} />
       </div>
       <div className={styles.articles}>
