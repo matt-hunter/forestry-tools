@@ -17,6 +17,14 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) =>
 
   const getPage = filePath => pages.find(page => filePath.includes(page.relativePath))
 
+  const applySelect = e => {
+    if (e.target.value === 'all') {
+      navigate('?tag=')
+    } else {
+      navigate(`?tag=${e.target.value}`)
+    }
+  }
+
   return (
     <section className={classNames(block, styles)}>
       <div className={styles.categoriesContainer}>
@@ -35,6 +43,11 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) =>
             )
           })}
         </div>
+        <select className={styles.categoriesList} onChange={e => applySelect(e)}>
+          {tags.map((selected, i) => (
+            <option key={i} className={styles.category + `${selected === 'all' && !tag ? ` ${styles.active}` : selected === tag ? ` ${styles.active}` : ''}`} value={selected}>{selected[0].toUpperCase() + selected.slice(1)}</option>
+          ))}
+        </select>
       </div>
       <div className={styles.articles}>
         {articles.filter(article => !tag ? article : article.frontmatter.tags.find(articleTag => articleTag.toLowerCase() === tag)).map((article, i) => {
