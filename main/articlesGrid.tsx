@@ -3,6 +3,8 @@ import { Link, navigate } from 'gatsby'
 
 import { classNames, Image } from '../exports'
 
+import arrow from '../images/arrow-right.svg'
+
 export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) => {
   const [tags, setTags] = useState([])
 
@@ -46,7 +48,8 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) =>
                 <h2 className={styles.title}>{article.frontmatter.title}</h2>
               </Link>
               <Link className={styles.buttonLink} to={link}>
-                <p className={styles.button}>Read Full Story →</p>
+                <p className={styles.text}>Read Full Story</p>
+                <img className={styles.arrow} src={arrow} alt='Read Full Story' />
               </Link>
             </div>
           )
