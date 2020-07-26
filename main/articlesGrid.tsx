@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, navigate } from 'gatsby'
+import Select from 'react-select'
 
 import { classNames, Image } from '../exports'
 
@@ -18,12 +19,43 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) =>
   const getPage = filePath => pages.find(page => filePath.includes(page.relativePath))
 
   const applySelect = e => {
-    if (e.target.value === 'all') {
+    console.log(e)
+    if (e.value === 'all') {
       navigate('?tag=')
     } else {
-      navigate(`?tag=${e.target.value}`)
+      navigate(`?tag=${e.value}`)
     }
   }
+
+  const options = tags.map(selected => ({
+    value: selected,
+    label: selected[0].toUpperCase() + selected.slice(1)
+  }))
+
+  const selectStyles = {
+    control: (provided) => ({
+      ...provided,
+      borderRadius: 0,
+      border: '4px solid var(--color-alizarin)'
+    }),
+    indicatorSeparator: (provided) => ({
+      ...provided,
+      display: 'none'
+    }),
+    dropdownIndicator: provided => ({
+      ...provided,
+      color: 'var(--color-midnight-express)',
+      height: 40,
+      width: 40
+    })
+    // indicatorsContainer: provided => ({
+    //   ...provided,
+    //   height: 60,
+    //   width: 60
+    // })
+  }
+
+  // <option key={i} className={styles.category + `${selected === 'all' && !tag ? ` ${styles.active}` : selected === tag ? ` ${styles.active}` : ''}`} value={selected} selected={selected === tag}>{selected[0].toUpperCase() + selected.slice(1)}</option>
 
   return (
     <section className={classNames(block, styles)}>
@@ -43,11 +75,13 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag }) =>
             )
           })}
         </div>
-        <select className={styles.categoriesList} onChange={e => applySelect(e)}>
-          {tags.map((selected, i) => (
-            <option key={i} className={styles.category + `${selected === 'all' && !tag ? ` ${styles.active}` : selected === tag ? ` ${styles.active}` : ''}`} value={selected} selected={selected === tag}>{selected[0].toUpperCase() + selected.slice(1)}</option>
-          ))}
-        </select>
+        <Select
+          className={styles.categoriesList}
+          onChange={e => applySelect(e)}
+          options={options}
+          value={options.find(option => option.value === tag) || options[0]}
+          styles={selectStyles}
+        />
       </div>
       <div className={styles.articles}>
         {articles.filter(article => !tag ? article : article.frontmatter.tags.find(articleTag => articleTag.toLowerCase() === tag)).map((article, i) => {
