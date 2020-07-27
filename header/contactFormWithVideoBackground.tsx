@@ -19,7 +19,7 @@ export const ContactFormWithVideoBackground = ({ block, images, styles }) => {
         <ReactPlayer playing={playing} muted loop className={styles.video} url={block.video} width='100%' height='100%' />
       </div>
       <Image images={images} className={styles.image} src={block.image} container='div' />
-      <form className={styles.form + ' pageclip-form'} action={block.url}>
+      <form className={styles.form + ' pageclip-form'} action={block.url} method='post'>
         <h1 className={styles.heading}>{block.heading}</h1>
         <h2 className={styles.subheading}>{block.subheading}</h2>
         <fieldset className={styles.nameSet}>
