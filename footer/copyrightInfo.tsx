@@ -27,7 +27,7 @@ export const CopyrightInfo = ({ block, styles, pages }) => {
       })}
       <p className={styles.divider}>|</p>
       <p className={styles.paragraph}>
-        <a className={styles.link} href='https://fireupyourbrand.com' target='_blank' rel='noopener noreferrer'>Web design by Station8</a>
+        <a className={styles.link} href='http://fireupyourbrand.com' target='_blank' rel='noopener noreferrer'>Web design by Station8</a>
       </p>
     </section>
   )
