@@ -1,10 +1,12 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
+import 'animate.css/animate.min.css'
+
 import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, KnowledgeBase, Leadership, Map, Posts, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../main'
 
 export default (block, i, images, styles, articles, pages, tag, toggleForm) => (
-  <ScrollAnimation animateIn='fadeIn'>
+  <ScrollAnimation animateIn='fadeIn' scrollableParentSelector='#main'>
     {block.template === 'main-animated-image' ? (
       <AnimatedImage key={i} block={block} images={images} styles={styles} />
     ) : block.template === 'main-articles-grid' ? (
