@@ -1,4 +1,7 @@
 import React from 'react'
+import ScrollAnimation from 'react-animate-on-scroll'
+
+import 'animate.css/animate.min.css'
 
 import { classNames, enabled, Image } from '../exports'
 
@@ -25,16 +28,24 @@ export const Hero = ({ block, styles, images }) => {
       <OilPriceTicker styles={styles} />
       <div className={styles.textContainer}>
         {block.smallHeading && (
-          <h1 className={styles.smallHeading}>{block.smallHeading}</h1>
+          <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150} delay={1000}>
+            <h1 className={styles.smallHeading}>{block.smallHeading}</h1>
+          </ScrollAnimation>
         )}
         {block.largeHeading && (
-          <h2 className={styles.largeHeading}>{block.largeHeading}</h2>
+          <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150} delay={1500}>
+            <h2 className={styles.largeHeading}>{block.largeHeading}</h2>
+          </ScrollAnimation>
         )}
         {block.mediumHeading && (
-          <h3 className={styles.mediumHeading}>{block.mediumHeading}</h3>
+          <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150} delay={2000}>
+            <h3 className={styles.mediumHeading}>{block.mediumHeading}</h3>
+          </ScrollAnimation>
         )}
         {block.body && (
-          <p className={styles.body}>{block.body}</p>
+          <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150} delay={2500}>
+            <p className={styles.body}>{block.body}</p>
+          </ScrollAnimation>
         )}
       </div>
       <div onClick={scrollDown} className={styles.pageDownIconContainer}>
