@@ -1,6 +1,5 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
-import { useInView } from 'react-intersection-observer'
 
 import 'animate.css/animate.min.css'
 
