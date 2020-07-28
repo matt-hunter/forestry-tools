@@ -99,7 +99,9 @@ export default (block, i, images, styles, articles, pages, tag, toggleForm) => (
       <Slideshow key={i} block={block} styles={styles} />
     </ScrollAnimation>
   ) : block.template === 'main-static-image' ? (
-    <StaticImage key={i} block={block} images={images} styles={styles} pages={pages} toggleForm={toggleForm} />
+    <ScrollAnimation animateIn='animate__zoomInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+      <StaticImage key={i} block={block} images={images} styles={styles} pages={pages} toggleForm={toggleForm} />
+    </ScrollAnimation>
   ) : block.template === 'main-testimonial' ? (
     <ScrollAnimation animateIn='animate__zoomInUp' animateOnce scrollableParentSelector='#main' offset={150}>
       <Testimonial key={i} block={block} styles={styles} images={images} />

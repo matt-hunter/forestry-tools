@@ -1,13 +1,11 @@
 import React from 'react'
-import { useInView } from 'react-intersection-observer'
 
 import { classNames, Image } from '../exports'
 import { Button } from '../shared'
 
 export const StaticImage = ({ block, styles, images, pages, toggleForm }) => {
-  const [ref, inView] = useInView({ threshold: 0.7, root: typeof window !== 'undefined' ? document.getElementById('main') : undefined })
   return (
-    <section ref={ref} className={classNames(block, styles) + `${inView ? ` ${styles.inView}` : ''}`}>
+    <section className={classNames(block, styles)}>
       <Image images={images} className={styles.image} container='div' src={block.image.image} title={block.image.title} alt={block.image.alt} />
       <div className={styles.textContainer}>
         {block.heading && (
