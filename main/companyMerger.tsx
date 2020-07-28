@@ -14,12 +14,12 @@ export const CompanyMerger = ({ block, styles, images }) => {
           return (
             <React.Fragment key={i}>
               {i > 0 && <p className={styles.plusSymbol}>+</p>}
-              <div className={styles.company}>
+              <a href={company.link} className={styles.company} target='_blank' rel='noopener noreferrer'>
                 <div className={styles.imageContainer}>
                   <Image className={styles.image} images={images} src={company.logo.image} title={company.logo.title} alt={company.logo.alt} container='div' />
                 </div>
                 {company.description && <p className={styles.description}>{company.description}</p>}
-              </div>
+              </a>
             </React.Fragment>
           )
         })}
