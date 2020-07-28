@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, navigate } from 'gatsby'
 import Select from 'react-select'
-import ScrollAnimation from 'react-animate-on-scroll'
-
-import 'animate.css/animate.min.css'
 
 import { classNames, Image } from '../exports'
 
@@ -83,20 +80,18 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag, limi
         {articles.filter(article => !tag ? article : article.frontmatter.tags.find(articleTag => articleTag.toLowerCase() === tag)).filter((article, i) => !limit ? article : i < limit && article).map((article, i) => {
           const link = getPage(article.frontmatter.parent).filePath + '/' + article.fields.slug + `${tag ? '?tag=' + tag : ''}`
           return (
-            <ScrollAnimation key={i + article.fields.slug} animateIn='animate__fadeIn' scrollableParentSelector='#main' offset={150} delay={250 * (i + 1)}>
-              <div className={styles.article}>
-                <Link className={styles.imageLink} to={link}>
-                  <Image images={images} className={styles.image} src={article.frontmatter.heroImage.relativePath} container='div' />
-                </Link>
-                <Link className={styles.titleLink} to={link}>
-                  <h2 className={styles.title}>{article.frontmatter.title}</h2>
-                </Link>
-                <Link className={styles.buttonLink} to={link}>
-                  <p className={styles.text}>Read Full Story</p>
-                  <img className={styles.arrow} src={arrow} alt='Read Full Story' />
-                </Link>
-              </div>
-            </ScrollAnimation>
+            <div key={i + article.fields.slug} className={styles.article}>
+              <Link className={styles.imageLink} to={link}>
+                <Image images={images} className={styles.image} src={article.frontmatter.heroImage.relativePath} container='div' />
+              </Link>
+              <Link className={styles.titleLink} to={link}>
+                <h2 className={styles.title}>{article.frontmatter.title}</h2>
+              </Link>
+              <Link className={styles.buttonLink} to={link}>
+                <p className={styles.text}>Read Full Story</p>
+                <img className={styles.arrow} src={arrow} alt='Read Full Story' />
+              </Link>
+            </div>
           )
         })}
       </div>
