@@ -52,7 +52,11 @@ export const Hero = ({ block, styles, images }) => {
         <Image className={styles.icon} images={images} src={block.pageDownIcon.image} title={block.pageDownIcon.title} alt={block.pageDownIcon.alt} />
         <p className={styles.label}>Scroll</p>
       </div>
-      {block.showRedBar && <div className={styles.redBar} />}
+      {block.showRedBar && (
+        <ScrollAnimation className={styles.redBarContainer} animateIn='animate__fadeInDown' animateOnce scrollableParentSelector='#main' offset={150}>
+          <div className={styles.redBar} />
+        </ScrollAnimation>
+      )}
     </section>
   )
 }

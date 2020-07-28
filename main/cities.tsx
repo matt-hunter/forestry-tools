@@ -1,4 +1,7 @@
 import React from 'react'
+import ScrollAnimation from 'react-animate-on-scroll'
+
+import 'animate.css/animate.min.css'
 
 import { classNames, enabled, Image } from '../exports'
 
@@ -37,7 +40,11 @@ export const Cities = ({ block, styles, images, toggleForm }) => {
           })}
         </div>
       )}
-      {block.showRedBar && <div className={styles.redBar} />}
+      {block.showRedBar && (
+        <ScrollAnimation className={styles.redBarContainer} animateIn='animate__fadeInDown' animateOnce scrollableParentSelector='#main' offset={150}>
+          <div className={styles.redBar} />
+        </ScrollAnimation>
+      )}
     </section>
   )
 }

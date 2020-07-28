@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import ScrollAnimation from 'react-animate-on-scroll'
+
+import 'animate.css/animate.min.css'
 
 import { classNames, enabled, Image } from '../exports'
 import { Button } from '../shared'
@@ -30,7 +33,11 @@ export const Highlights = ({ block, styles, images, toggleForm }) => {
             return (
               <div key={i} className={styles.imageContainer + `${index === i ? ` ${styles.active}` : ''}`}>
                 <Image className={styles.image} images={images} src={highlight.image.image} title={highlight.image.title} alt={highlight.image.alt} container='div'>
-                  {block.showRedBar && <div className={styles.redBar} />}
+                  {block.showRedBar && (
+                    <ScrollAnimation animateIn='animate__fadeInDown' animateOnce scrollableParentSelector='#main' offset={150}>
+                      <div className={styles.redBar} />
+                    </ScrollAnimation>
+                  )}
                 </Image>
               </div>
             )
