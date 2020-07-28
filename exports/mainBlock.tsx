@@ -1,5 +1,6 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
+import { useInView } from 'react-intersection-observer'
 
 import 'animate.css/animate.min.css'
 
@@ -95,13 +96,11 @@ export default (block, i, images, styles, articles, pages, tag, toggleForm) => (
       <RichText key={i} block={block} styles={styles} />
     </ScrollAnimation>
   ) : block.template === 'main-slideshow' ? (
-    <ScrollAnimation animateIn='animate__zoomInUp' animateOnce scrollableParentSelector='#main' offset={150} initiallyVisible>
+    <ScrollAnimation animateIn='animate__fadeIn' animateOnce scrollableParentSelector='#main' offset={150}>
       <Slideshow key={i} block={block} styles={styles} />
     </ScrollAnimation>
   ) : block.template === 'main-static-image' ? (
-    <ScrollAnimation animateIn='animate__fadeIn' animateOnce scrollableParentSelector='#main' offset={150}>
-      <StaticImage key={i} block={block} images={images} styles={styles} pages={pages} toggleForm={toggleForm} />
-    </ScrollAnimation>
+    <StaticImage key={i} block={block} images={images} styles={styles} pages={pages} toggleForm={toggleForm} />
   ) : block.template === 'main-testimonial' ? (
     <ScrollAnimation animateIn='animate__zoomInUp' animateOnce scrollableParentSelector='#main' offset={150}>
       <Testimonial key={i} block={block} styles={styles} images={images} />
