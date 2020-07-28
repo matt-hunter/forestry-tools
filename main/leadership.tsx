@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import ScrollAnimation from 'react-animate-on-scroll'
+
+import 'animate.css/animate.min.css'
 
 import { classNames, enabled, Image } from '../exports'
 
@@ -12,17 +15,19 @@ export const Leadership = ({ block, styles, images }) => {
         {enabled(block.leaders).map((leader, i) => <Leader key={i} leader={leader} i={i} index={index} setIndex={setIndex} required={required} />)}
       </div>
       {index !== undefined && block.leaders[index] && (
-        <div className={styles.detail}>
-          {block.leaders[index].name && <h2 className={styles.name}>{block.leaders[index].name}</h2>}
-          {block.leaders[index].title && <h3 className={styles.title}>{block.leaders[index].title}</h3>}
-          {block.leaders[index].biography && (
-            <div className={styles.biography}>
-              {block.leaders[index].biography.split('\n').map((paragraph, i) => (
-                <p key={i} className={styles.paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          )}
-        </div>
+        <ScrollAnimation animateIn='animate__fadeIn' animateOnce scrollableParentSelector='#main' offset={150}>
+          <div className={styles.detail}>
+            {block.leaders[index].name && <h2 className={styles.name}>{block.leaders[index].name}</h2>}
+            {block.leaders[index].title && <h3 className={styles.title}>{block.leaders[index].title}</h3>}
+            {block.leaders[index].biography && (
+              <div className={styles.biography}>
+                {block.leaders[index].biography.split('\n').map((paragraph, i) => (
+                  <p key={i} className={styles.paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            )}
+          </div>
+        </ScrollAnimation>
       )}
     </div>
   )
