@@ -24,7 +24,11 @@ export const StaticImage = ({ block, styles, images, pages, toggleForm }) => {
           <Button text='Find out more' direction='right' styles={styles} pages={pages} link={block.button.link} onClick={toggleForm} />
         )}
       </div>
-      {videos && <ReactPlayer autoplay playing muted loop playsinline controls={false} volume={0} pip={false} className={styles.video} url={videos} width='100%' height='100%' />}
+      {videos && (
+        <div className={styles.videoContainer}>
+          <ReactPlayer autoplay playing muted loop playsinline controls={false} volume={0} pip={false} className={styles.video} url={videos} width='100%' height='100%' />
+        </div>
+      )}
     </section>
   )
 }
