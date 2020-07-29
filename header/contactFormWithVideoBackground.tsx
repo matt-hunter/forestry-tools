@@ -27,7 +27,7 @@ export const ContactFormWithVideoBackground = ({ block, images, menuOpen, styles
   return (
     <section className={styles.default}>
       <div className={styles.videoContainer}>
-        <ReactPlayer playing={playing} muted loop controls={false} volume={0} pip={false} className={styles.video} url={video ? video.publicURL : block.video} width='100%' height='100%' />
+        <ReactPlayer playing={playing} autoplay muted loop playsinline controls={false} volume={0} pip={false} className={styles.video} url={video ? video.publicURL : block.video} width='100%' height='100%' />
       </div>
       <Image images={images} className={styles.image} src={block.image} container='div' />
       <form className={styles.form + ' pageclip-form'} action={block.url} method='post'>
