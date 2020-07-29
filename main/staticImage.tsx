@@ -13,7 +13,7 @@ export const StaticImage = ({ block, styles, images, pages, toggleForm }) => {
 
   return (
     <section className={classNames(block, styles)}>
-      {block.image && !videos.length && <Image images={images} className={styles.image} container='div' src={block.image.image} title={block.image.title} alt={block.image.alt} />}
+      {videos && videos.length ? null : <Image images={images} className={styles.image} container='div' src={block.image.image} title={block.image.title} alt={block.image.alt} />}
       <div className={styles.textContainer}>
         {block.heading && (
           <h1 className={styles.heading}>{block.heading}</h1>
