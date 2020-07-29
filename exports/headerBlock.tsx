@@ -2,11 +2,11 @@ import React from 'react'
 
 import { CallButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, toggleForm } from '../header'
 
-export default (block, i, images, styles, pages, contactInfo, setMenuOpen, toggleForm) => {
+export default (block, i, images, styles, pages, contactInfo, setMenuOpen, toggleForm, menuOpen) => {
   return block.template === 'header-call-button' ? (
     <CallButton key={i} block={block} styles={styles} images={images} />
   ) : block.template === 'header-contact-form-with-video-background' ? (
-    <ContactFormWithVideoBackground key={i} block={block} styles={styles} images={images} />
+    <ContactFormWithVideoBackground key={i} block={block} styles={styles} images={images} menuOpen={menuOpen} />
   ) : block.template === 'header-contact-info' ? (
     <ContactInfo key={i} styles={styles} contactInfo={contactInfo} />
   ) : block.template === 'header-favorite-page' ? (

@@ -4,14 +4,23 @@ import ReactPlayer from 'react-player'
 import { Image } from '../exports'
 import { Button } from '../shared'
 
-export const ContactFormWithVideoBackground = ({ block, images, styles }) => {
+export const ContactFormWithVideoBackground = ({ block, images, menuOpen, styles }) => {
+  const [disabled, setDisabled] = useState(false)
   const [playing, setPlaying] = useState(true)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      if (window.localStorage.getItem('playing') === 'no') setPlaying(false)
+      if (window.localStorage.getItem('playing') === 'no') setDisabled(true)
     }
   }, [])
+
+  useEffect(() => {
+    if (menuOpen && !disabled) {
+      setPlaying(true)
+    } else {
+      setPlaying(false)
+    }
+  }, [menuOpen])
 
   return (
     <section className={styles.default}>
