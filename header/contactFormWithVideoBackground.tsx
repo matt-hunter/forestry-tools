@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/lazy'
 
 import { Image } from '../exports'
 import { Button } from '../shared'
@@ -7,6 +7,8 @@ import { Button } from '../shared'
 export const ContactFormWithVideoBackground = ({ block, images, menuOpen, styles }) => {
   const [disabled, setDisabled] = useState(false)
   const [playing, setPlaying] = useState(true)
+
+  const video = block.videoFile && images.find(video => video.relativePath === 'images/' + block.videoFile.split('/').pop())
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -25,7 +27,7 @@ export const ContactFormWithVideoBackground = ({ block, images, menuOpen, styles
   return (
     <section className={styles.default}>
       <div className={styles.videoContainer}>
-        <ReactPlayer playing={playing} muted loop className={styles.video} url={block.video} width='100%' height='100%' />
+        <ReactPlayer playing={playing} muted loop controls={false} volume={0} pip={false} className={styles.video} url={video ? video.publicURL : block.video} width='100%' height='100%' />
       </div>
       <Image images={images} className={styles.image} src={block.image} container='div' />
       <form className={styles.form + ' pageclip-form'} action={block.url} method='post'>
