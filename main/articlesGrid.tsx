@@ -71,6 +71,7 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag, limi
         <Select
           className={styles.categoriesList}
           onChange={e => applySelect(e)}
+          blurInputOnSelect
           options={options}
           value={options.find(option => option.value === tag) || options[0]}
           styles={selectStyles}
