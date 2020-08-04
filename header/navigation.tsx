@@ -17,11 +17,13 @@ export const Navigation = ({ block, styles, pages, setMenuOpen, toggleForm }) =>
     <nav className={styles.default} role='navigation' aria-label='main navigation'>
       <ul className={styles.item + ' ' + styles.list}>
         {block.navigationItems.map((item, i) => (
-          <React.Fragment key={i}>
+          <li key={i}>
             {getPage(item)}
-          </React.Fragment>
+          </li>
         ))}
-        <Button styles={styles} text='Contact' onClick={toggleForm} />
+        <li>
+          <Button styles={styles} text='Contact' onClick={toggleForm} />
+        </li>
       </ul>
     </nav>
   )
