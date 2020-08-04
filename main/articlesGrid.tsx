@@ -19,7 +19,6 @@ export const ArticlesGrid = ({ block, styles, images, articles, pages, tag, limi
   const getPage = filePath => pages.find(page => filePath.includes(page.relativePath))
 
   const applySelect = e => {
-    console.log(e)
     if (e.value === 'all') {
       navigate('?tag=')
     } else {
