@@ -16,7 +16,7 @@ export const CompanyMerger = ({ block, styles, images }) => {
               {i > 0 && <p className={styles.plusSymbol}>+</p>}
               <a href={company.link} className={styles.company} target='_blank' rel='noopener noreferrer'>
                 <div className={styles.imageContainer}>
-                  <Image className={styles.image} images={images} src={company.logo.image} title={company.logo.title} alt={company.logo.alt} container='div' />
+                  <Image className={styles.image} images={images} src={company.logo.image} title={company.logo.title} alt={company.logo.alt} container='div' style={{ backgroundSize: 'contain' }} />
                 </div>
                 {company.description && <p className={styles.description}>{company.description}</p>}
               </a>

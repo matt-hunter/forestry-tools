@@ -20,9 +20,7 @@ export const Hero = ({ block, styles, images }) => {
     <section id='hero' className={classNames(block, styles)}>
       <div className={styles.backgrounds}>
         {enabled(block.backgrounds).map((background, i) => (
-          <div key={i} className={styles.imageContainer + `${background.class ? ` ${styles[background.class]}` : ''}`}>
-            <Image className={styles.image} images={images} src={block.backgrounds[i].image} title={background.title} alt={background.alt} />
-          </div>
+          <Image key={i} className={styles.imageContainer + `${background.class ? ` ${styles[background.class]}` : ''}`} images={images} src={block.backgrounds[i].image} title={background.title} container='div' alt={background.alt} />
         ))}
       </div>
       <OilPriceTicker styles={styles} />
